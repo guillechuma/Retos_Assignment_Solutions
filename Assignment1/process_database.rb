@@ -5,7 +5,7 @@ require './SeedStock.rb'
 require './StockDatabase.rb'
 
 # Global variables
-# Paths for tsv files
+# Get the command line arguments
 input_array = ARGV
 # Case where there are no command line arguments or not enough
 if input_array.empty? or (input_array.length != 4) then 
@@ -26,13 +26,13 @@ end
 database = StockDatabase.new
 
 # Fill database with tsv file stock data
-database.load_from_file($STOCK_FILE)
+database.load_from_file($STOCK_FILE) # BONUS
 
 # Simulate planting 7 grams of seed from the stock database
-database.plant_seed(7)
+database.plant_seed(7) # BONUS
 
 # Write the updated database to a new tsv file
-database.write_database($OUTPUT_FILE)
+database.write_database($OUTPUT_FILE) # BONUS
 
 ## Prepare database for TASK 2
 # Add Gene data information to the stock database
@@ -136,6 +136,7 @@ puts
 
 # Bonus code
 puts '-'*20
+puts
 puts 'BONUS'
 puts 'Testing that the Gene class accepts correct Gene ID'
 
