@@ -1,3 +1,5 @@
+require './Gene.rb'
+
 class HybridCross
 	##
 	# This class represents a Hybrid Cross between two parents.
