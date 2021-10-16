@@ -1,0 +1,15 @@
+WARNING: we have run out of Seed Stock A51
+WARNING: we have run out of Seed Stock B52
+Recording: ufo is genetically linked to pi with chisquare score 32.27942794279428
+Final Report:
+ufo is linked to pi
+pi is linked to ufo
+
+--------------------
+
+BONUS
+Testing that the Gene class accepts correct Gene ID
+The Gene ID AT1G69120A is not valid
+
+Retrieve seed stock by its ID in database
+A348

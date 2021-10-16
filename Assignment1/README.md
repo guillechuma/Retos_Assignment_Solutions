@@ -10,3 +10,5 @@ There are two ways to view the results.
 ```
 ruby process_database.rb  gene_information.tsv  seed_stock_data.tsv  cross_data.tsv  new_stock_file.tsv
 ```
+
+The output of the command line program is in the file output.txt
