@@ -10,8 +10,8 @@ class Interaction
 	attr_accessor :interactorB # Gene object
 
 	def initialize(params={})
-		@interactorA = params.fetch(:interactorA, Gene.new())
-		@interactorB = params.fetch(:interactorB, Gene.new())
+		@interactorA = params.fetch(:interactorA, nil)
+		@interactorB = params.fetch(:interactorB, nil)
 		@int_detection_method = Array.new # Interaction detection method
 		@int_type = Array.new # Interaction type
 		@source_db = Array.new # source databases

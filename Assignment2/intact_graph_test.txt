@@ -1,0 +1,149 @@
+Creating network
+(AT1G60250=AT1G71030)(AT2G46340=AT1G53090)(AT2G46340=AT2G32950)(AT2G46340=AT3G15354)(AT3G07220=AT5G15850)(AT3G15030=AT5G17300)(AT4G09650=AT4G32570)(AT4G17460=AT3G07220)(AT4G17460=AT3G15030)(AT4G32570=AT1G37130)(AT5G15850=AT1G53090)(AT5G15850=AT2G32950)(AT5G15850=AT2G46340)(AT5G15850=AT3G02150)(AT5G15850=AT3G15354)(AT5G17300=AT1G60250)(AT5G17300=AT3G02150)
+
+graph RGL__AdjacencyGraph {
+    AT4G09650 [
+        fontsize = 8,
+        label = AT4G09650
+    ]
+
+    AT4G32570 [
+        fontsize = 8,
+        label = AT4G32570
+    ]
+
+    AT1G37130 [
+        fontsize = 8,
+        label = AT1G37130
+    ]
+
+    AT4G17460 [
+        fontsize = 8,
+        label = AT4G17460
+    ]
+
+    AT3G07220 [
+        fontsize = 8,
+        label = AT3G07220
+    ]
+
+    AT5G15850 [
+        fontsize = 8,
+        label = AT5G15850
+    ]
+
+    AT3G15030 [
+        fontsize = 8,
+        label = AT3G15030
+    ]
+
+    AT5G17300 [
+        fontsize = 8,
+        label = AT5G17300
+    ]
+
+    AT3G02150 [
+        fontsize = 8,
+        label = AT3G02150
+    ]
+
+    AT2G46340 [
+        fontsize = 8,
+        label = AT2G46340
+    ]
+
+    AT3G15354 [
+        fontsize = 8,
+        label = AT3G15354
+    ]
+
+    AT1G53090 [
+        fontsize = 8,
+        label = AT1G53090
+    ]
+
+    AT2G32950 [
+        fontsize = 8,
+        label = AT2G32950
+    ]
+
+    AT1G60250 [
+        fontsize = 8,
+        label = AT1G60250
+    ]
+
+    AT1G71030 [
+        fontsize = 8,
+        label = AT1G71030
+    ]
+
+    AT4G09650 -- AT4G32570 [
+        fontsize = 8
+    ]
+
+    AT4G32570 -- AT1G37130 [
+        fontsize = 8
+    ]
+
+    AT4G17460 -- AT3G07220 [
+        fontsize = 8
+    ]
+
+    AT4G17460 -- AT3G15030 [
+        fontsize = 8
+    ]
+
+    AT3G07220 -- AT5G15850 [
+        fontsize = 8
+    ]
+
+    AT5G15850 -- AT3G02150 [
+        fontsize = 8
+    ]
+
+    AT5G15850 -- AT2G46340 [
+        fontsize = 8
+    ]
+
+    AT5G15850 -- AT3G15354 [
+        fontsize = 8
+    ]
+
+    AT5G15850 -- AT1G53090 [
+        fontsize = 8
+    ]
+
+    AT5G15850 -- AT2G32950 [
+        fontsize = 8
+    ]
+
+    AT3G15030 -- AT5G17300 [
+        fontsize = 8
+    ]
+
+    AT5G17300 -- AT3G02150 [
+        fontsize = 8
+    ]
+
+    AT5G17300 -- AT1G60250 [
+        fontsize = 8
+    ]
+
+    AT2G46340 -- AT3G15354 [
+        fontsize = 8
+    ]
+
+    AT2G46340 -- AT1G53090 [
+        fontsize = 8
+    ]
+
+    AT2G46340 -- AT2G32950 [
+        fontsize = 8
+    ]
+
+    AT1G60250 -- AT1G71030 [
+        fontsize = 8
+    ]
+}
+#<IO:0x000000015489a440>
+program finished

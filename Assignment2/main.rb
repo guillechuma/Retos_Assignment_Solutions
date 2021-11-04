@@ -1,6 +1,6 @@
 require 'rest-client'
 require './InteractionParser.rb'
-
+require './InteractionNetwork'
 def fetch(url, headers = {accept: "*/*"}, user = "", pass="")
   response = RestClient::Request.execute({
     method: :get,
@@ -24,6 +24,19 @@ def fetch(url, headers = {accept: "*/*"}, user = "", pass="")
     return response  # now we are returning 'False', and we will check that with an \"if\" statement in our main code
 end
 
+gene_file = 'ArabidopsisSubNetwork_GeneList.txt'
+
+puts 'Creating network'
+
+network = InteractionNetwork.new(gene_file: gene_file)
+
+puts network.network
+puts "\n"
+puts network.save_network
+
+puts 'program finished'
+abort
+
 url = 'http://www.ebi.ac.uk/Tools/webservices/psicquic/intact/webservices/current/search/interactor/At4g18960?format=tab25'
 
 if res = fetch(url)
@@ -32,9 +45,12 @@ if res = fetch(url)
 	# Separate text by line
 	row = res.body
 
+	puts row.length == 0
+	abort
+
 	int = InteractionParser.new(tab25_data: row)
-	puts 's'
-	puts int.interactions[0].interactorA.all_names
+	puts int.interactions[0].interactorA.taxonomy_id
+	puts Gene.get_all_genes.keys
 	abort
 	
 	row = res.body.split('\n')
