@@ -110,8 +110,10 @@ class InteractionParser
 			return nil
 		end
 
+
+
 		# Check if protein A and protein B are the same
-		return nil if locus_tag_a[0] == locus_tag_b[0]
+		return nil if locus_tag_a[0].upcase == locus_tag_b[0].upcase
 
 		return locus_tag_a[0].upcase, locus_tag_b[0].upcase
 
