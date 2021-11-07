@@ -119,64 +119,64 @@ class InteractionParser
 
 		# return nil if locus_tag_a == locus_tag_b
 		
-		# return locus_tag_a, locus_tag_b
-		# TODO: Check if it is necesary to create genes
-		# Create Proteins
-		protein_a = Gene.new(id: locus_tag_a[0])
-		protein_b = Gene.new(id: locus_tag_b[0])
+		# # return locus_tag_a, locus_tag_b
+		# # TODO: Check if it is necesary to create genes
+		# # Create Proteins
+		# protein_a = Gene.new(id: locus_tag_a[0])
+		# protein_b = Gene.new(id: locus_tag_b[0])
 
-		# Set attributes of Proteins
-		protein_a.alt_id = alt_id_a
-		protein_a.alias = al_a
-		protein_a.taxonomy_id = tax_a
+		# # Set attributes of Proteins
+		# protein_a.alt_id = alt_id_a
+		# protein_a.alias = al_a
+		# protein_a.taxonomy_id = tax_a
 
-		protein_b.alt_id = alt_id_b
-		protein_b.alias = al_b
-		protein_b.taxonomy_id = tax_b
+		# protein_b.alt_id = alt_id_b
+		# protein_b.alias = al_b
+		# protein_b.taxonomy_id = tax_b
 
-		# Create interactor object
-		interactor = Interaction.new(interactorA: protein_a, interactorB: protein_b)
+		# # Create interactor object
+		# interactor = Interaction.new(interactorA: protein_a, interactorB: protein_b)
 
-		# Set attribures of Interactor
-		interactor.int_detection_method = int_met
-		interactor.int_type = int_type
-		interactor.source_db = source_db
-		interactor.interaction_id = int_id
-		interactor.confidence = int_score
+		# # Set attribures of Interactor
+		# interactor.int_detection_method = int_met
+		# interactor.int_type = int_type
+		# interactor.source_db = source_db
+		# interactor.interaction_id = int_id
+		# interactor.confidence = int_score
 
-		return interactor
+		# return interactor
 	end
 
-	def find_locus_tag(alt_ids)
-		#puts "alternative id #{alt_ids}"
-		locus_tag_regex =/A[Tt]\d[Gg]\d\d\d\d\d/i
-		alt_id_list = alt_ids.split(" ")
-		alt_id_list.each do |alt_id|
-			if url = fetch("http://togows.dbcls.jp/entry/uniprot/#{alt_id}/dr.json")
-				text = url.body
-				locus_tag = text.match(locus_tag_regex)
+	# def find_locus_tag(alt_ids)
+	# 	#puts "alternative id #{alt_ids}"
+	# 	locus_tag_regex =/A[Tt]\d[Gg]\d\d\d\d\d/i
+	# 	alt_id_list = alt_ids.split(" ")
+	# 	alt_id_list.each do |alt_id|
+	# 		if url = fetch("http://togows.dbcls.jp/entry/uniprot/#{alt_id}/dr.json")
+	# 			text = url.body
+	# 			locus_tag = text.match(locus_tag_regex)
 
-				# if locus_tag
-				# 	#puts "found locus tag #{locus_tag}"
-				# 	return locus_tag
-				# else
-				# 	if url = fetch("https://www.uniprot.org/uniprot/#{alt_id}.txt")
-				# 		text = url.body
-				# 		locus_tag = text.match(locus_tag_regex)
-				# 	end
-				# end
+	# 			# if locus_tag
+	# 			# 	#puts "found locus tag #{locus_tag}"
+	# 			# 	return locus_tag
+	# 			# else
+	# 			# 	if url = fetch("https://www.uniprot.org/uniprot/#{alt_id}.txt")
+	# 			# 		text = url.body
+	# 			# 		locus_tag = text.match(locus_tag_regex)
+	# 			# 	end
+	# 			# end
 
-				if locus_tag
-					#puts "found locus tag #{locus_tag}"
-					return locus_tag
-				else
-					return nil
-				end
-			end
-		end
+	# 			if locus_tag
+	# 				#puts "found locus tag #{locus_tag}"
+	# 				return locus_tag
+	# 			else
+	# 				return nil
+	# 			end
+	# 		end
+	# 	end
 
-		return nil
-	end
+	# 	return nil
+	# end
 end
 
 def fetch(url, headers = {accept: "*/*"}, user = "", pass="")
