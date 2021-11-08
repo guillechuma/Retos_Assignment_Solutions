@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: InteractionNetwork
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "InteractionNetwork";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (I)</a> &raquo;
+    
+    
+    <span class="title">InteractionNetwork</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: InteractionNetwork
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">InteractionNetwork</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>InteractionNetwork.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<h2 id="label-InteractionNetwork">InteractionNetwork</h2>
+
+<p>This represents all the Networks that are formed by all the interactions between a list of Genes.</p>
+
+<h2 id="label-Summary">Summary</h2>
+
+<p>The network is formed using the information of interactions in the PSIQUIC IntAct REST API. It searches the interactions of all genes until a depth level and makes the corresponding networks. The Network representation is an undirected graph modeled with the gem library RGL. Using graphs we have information of every pair of interactions in the network and also of all the networks that are formed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#network_list-instance_method" title="#network_list (instance method)">#<strong>network_list</strong>  &#x21d2; Array&lt;RGL::AdjacencyGraph&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get/Set the list of all networks.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#all_networks-instance_method" title="#all_networks (instance method)">#<strong>all_networks</strong>  &#x21d2; RGL::AdjacencyGraph </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get method for the all_networks RGL graph.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#annotate_networks-instance_method" title="#annotate_networks (instance method)">#<strong>annotate_networks</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Find the GO and KEGG annotations for all the genes in the network.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_all_networks_recursive-instance_method" title="#create_all_networks_recursive (instance method)">#<strong>create_all_networks_recursive</strong>(prev_locus_tag, locus_tag, depth = 3)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Recursive method to seach for the interactions of a AGI locus ID and find connections with a certain depth.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_genes-instance_method" title="#create_genes (instance method)">#<strong>create_genes</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Read the gene_file to get all the genes and create instances of Gene objects for each Gene.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_report-instance_method" title="#create_report (instance method)">#<strong>create_report</strong>(filename)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a Report that is a summary of the networks.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_all_genes-instance_method" title="#get_all_genes (instance method)">#<strong>get_all_genes</strong>  &#x21d2; Hash&lt;String, Gene&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get method for the all_genes hash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_gene-instance_method" title="#get_gene (instance method)">#<strong>get_gene</strong>(locus_tag)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Retrieve a Gene object from the all_genes using the AGI Locus ID.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(params = {})  &#x21d2; InteractionNetwork </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new instance of InteractionNetwork object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#network_go-instance_method" title="#network_go (instance method)">#<strong>network_go</strong>(network)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Retrieve all the GO ID and terms of the members of a network.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#network_kegg-instance_method" title="#network_kegg (instance method)">#<strong>network_kegg</strong>(network)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Retrieve all the KEGG ID and terms of the members of a network.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#save_network-instance_method" title="#save_network (instance method)">#<strong>save_network</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Auxiliary method to print the network in a DOT format, which can be used to visualize the graph in other software, like GraphViz.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#separate_networks-instance_method" title="#separate_networks (instance method)">#<strong>separate_networks</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Separate each individual network from all the networks as an RGL undirected graph.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(params = {})  &#x21d2; <tt><span class='object_link'><a href="" title="InteractionNetwork (class)">InteractionNetwork</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new instance of InteractionNetwork object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>gene_file</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a text file that has the Gene&#39;s AGI locus codes (1 per line).</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>all_genes</span>
+      
+      
+        <span class='type'>(<tt>Hash&lt;String, <span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A hash of all the genes of gene_file. The key is the AGI locus code and the value is the Gene object.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>id_list</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;String&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of all the AGI locus codes in the gene_file.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>all_networks</span>
+      
+      
+        <span class='type'>(<tt>RGL::AdjacencyGraph</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An undirected graph object that represents the networks. The vertices are Gene Objects.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>network_list</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;RGL::AdjacencyGraph&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A list of an undirected Graph that represents each network of Genes.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 31</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+	<span class='ivar'>@gene_file</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='symbol'>:gene_file</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span> <span class='comment'># File name
+</span>	<span class='ivar'>@all_genes</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> 
+	<span class='ivar'>@id_list</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+	<span class='id identifier rubyid_create_genes'>create_genes</span> <span class='comment'># Fill the @all_genes and @id_list attributes with the genes in gene_file
+</span>	<span class='ivar'>@all_networks</span> <span class='op'>=</span> <span class='const'>RGL</span><span class='op'>::</span><span class='const'>AdjacencyGraph</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='comment'># Graph of the network
+</span>	<span class='comment'># Create all networks
+</span>	<span class='ivar'>@all_genes</span><span class='period'>.</span><span class='id identifier rubyid_each_key'>each_key</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='op'>|</span>
+		<span class='id identifier rubyid_create_all_networks_recursive'>create_all_networks_recursive</span><span class='lparen'>(</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='comma'>,</span> <span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rparen'>)</span> <span class='comment'># Create network for each AGI locus ID with a depth of 3
+</span>	<span class='kw'>end</span>
+
+	<span class='id identifier rubyid_annotate_networks'>annotate_networks</span> <span class='comment'># Annotate all genes in the networks with KEGG and GO terms
+</span>	<span class='comment'># Separate individal networks to a list
+</span>	<span class='ivar'>@network_list</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+	<span class='id identifier rubyid_separate_networks'>separate_networks</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id="network_list=-instance_method"></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="network_list-instance_method">
+  
+    #<strong>network_list</strong>  &#x21d2; <tt>Array&lt;RGL::AdjacencyGraph&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get/Set the list of all networks</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;RGL::AdjacencyGraph&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A list of an undirected Graph that represents each network of Genes.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_network_list'>network_list</span>
+  <span class='ivar'>@network_list</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="all_networks-instance_method">
+  
+    #<strong>all_networks</strong>  &#x21d2; <tt>RGL::AdjacencyGraph</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get method for the all_networks RGL graph.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>RGL::AdjacencyGraph</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An undirected graph object that represents the networks. The vertices are Gene Objects.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_all_networks'>all_networks</span>
+	<span class='kw'>return</span> <span class='ivar'>@all_networks</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="annotate_networks-instance_method">
+  
+    #<strong>annotate_networks</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Find the GO and KEGG annotations for all the genes in the network. The information is stored in each Gene object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95
+96
+97
+98</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_annotate_networks'>annotate_networks</span>
+	<span class='ivar'>@all_networks</span><span class='period'>.</span><span class='id identifier rubyid_vertices'>vertices</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span>
+		<span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_find_GO'>find_GO</span>
+		<span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_find_KEGG'>find_KEGG</span>
+	<span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_all_networks_recursive-instance_method">
+  
+    #<strong>create_all_networks_recursive</strong>(prev_locus_tag, locus_tag, depth = 3)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Recursive method to seach for the interactions of a AGI locus ID and find connections with a certain depth.  The depth level means how far in the interaction chain do you want to go for each AGI locus ID. Found interactions are added to the @all_networks attribute. IMPORTANT: Each vertex of the Graph is a Gene object with all its attributes. Each edge represents an interaction between two genes.</p>
+
+<p> @param locus_tag [String] The AGI locus ID query that will be used to search for interactions.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>prev_locus_tag</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The AGI locus ID query of the previous depth level, it is needed to stablish complete interactions.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>depth</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>3</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The depth level of the recursive function. By default it is set to 3. CAUTION: Change to higher depth at your own risk.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 225</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_all_networks_recursive'>create_all_networks_recursive</span><span class='lparen'>(</span><span class='id identifier rubyid_prev_locus_tag'>prev_locus_tag</span><span class='comma'>,</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span> <span class='op'>=</span> <span class='int'>3</span><span class='rparen'>)</span>
+
+	<span class='comment'># Base case
+</span>	<span class='kw'>if</span> <span class='id identifier rubyid_depth'>depth</span> <span class='op'>==</span> <span class='int'>1</span>
+		<span class='kw'>return</span>
+	<span class='kw'>end</span>
+
+	<span class='comment'># Find all interactions of locus_tag
+</span>	<span class='id identifier rubyid_interaction'>interaction</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="InteractionParser.html" title="InteractionParser (class)">InteractionParser</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="InteractionParser.html#initialize-instance_method" title="InteractionParser#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>locus_id:</span> <span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rparen'>)</span>
+	<span class='comment'># If there are interactions
+</span>	<span class='kw'>if</span> <span class='id identifier rubyid_interaction'>interaction</span><span class='period'>.</span><span class='id identifier rubyid_interactions'>interactions</span>
+		<span class='comment'># Go through each interaction (line)
+</span>		<span class='id identifier rubyid_interaction'>interaction</span><span class='period'>.</span><span class='id identifier rubyid_interactions'>interactions</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_new_int'>new_int</span><span class='op'>|</span>
+			<span class='comment'># Determine which is the query (locus_tag) and the interactor (other)
+</span>			<span class='id identifier rubyid_new_int'>new_int</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='id identifier rubyid_locus_tag'>locus_tag</span> <span class='op'>?</span> <span class='id identifier rubyid_other'>other</span> <span class='op'>=</span> <span class='id identifier rubyid_new_int'>new_int</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='id identifier rubyid_other'>other</span> <span class='op'>=</span> <span class='id identifier rubyid_new_int'>new_int</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+
+			<span class='comment'># If the other Gene (interactor) is in the gene_list, that means there is a direct connection and the edge is added to the graph.
+</span>			<span class='comment'># We chech that the other and the locus_tag are not the previous locus tag to avoid infinte loops.
+</span>			<span class='kw'>if</span> <span class='ivar'>@id_list</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_other'>other</span> <span class='kw'>and</span> <span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span> <span class='op'>!=</span> <span class='id identifier rubyid_prev_locus_tag'>prev_locus_tag</span><span class='rparen'>)</span> <span class='kw'>and</span> <span class='lparen'>(</span><span class='id identifier rubyid_prev_locus_tag'>prev_locus_tag</span> <span class='op'>!=</span> <span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rparen'>)</span>
+				<span class='const'><span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Gene.html#initialize-instance_method" title="Gene#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>id:</span> <span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='const'><span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all_genes'><span class='object_link'><a href="Gene.html#all_genes-class_method" title="Gene.all_genes (method)">all_genes</a></span></span><span class='period'>.</span><span class='id identifier rubyid_has_key?'>has_key?</span><span class='lparen'>(</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rparen'>)</span> <span class='comment'># Create a gene object if the Gene does not exist (For intermediaries)
+</span>				<span class='comment'># Add the interaction (edge) between previous locus tag and the locus tag, unless it already exists
+</span>				<span class='ivar'>@all_networks</span><span class='period'>.</span><span class='id identifier rubyid_add_edge'>add_edge</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all_genes'><span class='object_link'><a href="Gene.html#all_genes-class_method" title="Gene.all_genes (method)">all_genes</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_prev_locus_tag'>prev_locus_tag</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all_genes'><span class='object_link'><a href="Gene.html#all_genes-class_method" title="Gene.all_genes (method)">all_genes</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@all_networks</span><span class='period'>.</span><span class='id identifier rubyid_has_edge?'>has_edge?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all_genes'><span class='object_link'><a href="Gene.html#all_genes-class_method" title="Gene.all_genes (method)">all_genes</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_prev_locus_tag'>prev_locus_tag</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all_genes'><span class='object_link'><a href="Gene.html#all_genes-class_method" title="Gene.all_genes (method)">all_genes</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+				<span class='comment'># Add the interaction (edge) between locus tag and the other Gene, unless it already exists
+</span>				<span class='ivar'>@all_networks</span><span class='period'>.</span><span class='id identifier rubyid_add_edge'>add_edge</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all_genes'><span class='object_link'><a href="Gene.html#all_genes-class_method" title="Gene.all_genes (method)">all_genes</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all_genes'><span class='object_link'><a href="Gene.html#all_genes-class_method" title="Gene.all_genes (method)">all_genes</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_other'>other</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@all_networks</span><span class='period'>.</span><span class='id identifier rubyid_has_edge?'>has_edge?</span><span class='lparen'>(</span><span class='const'><span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all_genes'><span class='object_link'><a href="Gene.html#all_genes-class_method" title="Gene.all_genes (method)">all_genes</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='const'><span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all_genes'><span class='object_link'><a href="Gene.html#all_genes-class_method" title="Gene.all_genes (method)">all_genes</a></span></span><span class='lbracket'>[</span><span class='id identifier rubyid_other'>other</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+				<span class='kw'>next</span> <span class='comment'># Go to next interaction (No need to go further)
+</span>			<span class='kw'>else</span> <span class='comment'># If other is not on the gene_list, seach of the interactions of other
+</span>				<span class='id identifier rubyid_create_all_networks_recursive'>create_all_networks_recursive</span><span class='lparen'>(</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='comma'>,</span> <span class='id identifier rubyid_other'>other</span><span class='comma'>,</span> <span class='id identifier rubyid_depth'>depth</span><span class='op'>-</span><span class='int'>1</span><span class='rparen'>)</span> <span class='comment'># Locus_tag becomes the prev_locus_tag and other becomes the query, we have reached another depth level.
+</span>			<span class='kw'>end</span>
+		<span class='kw'>end</span>
+	<span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_genes-instance_method">
+  
+    #<strong>create_genes</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Read the gene_file to get all the genes and create instances of Gene objects for each Gene. It fills the all_genes hash and the id_list array.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_genes'>create_genes</span>
+	<span class='id identifier rubyid_genes'>genes</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='ivar'>@gene_file</span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>r</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+
+	<span class='id identifier rubyid_genes'>genes</span><span class='period'>.</span><span class='id identifier rubyid_readlines'>readlines</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='op'>|</span>
+		<span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='period'>.</span><span class='id identifier rubyid_strip!'>strip!</span>
+		<span class='id identifier rubyid_locus_tag'>locus_tag</span> <span class='op'>=</span> <span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span>
+		<span class='ivar'>@all_genes</span><span class='lbracket'>[</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Gene.html#initialize-instance_method" title="Gene#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>id:</span> <span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rparen'>)</span>
+		<span class='ivar'>@id_list</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_locus_tag'>locus_tag</span>
+	<span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_report-instance_method">
+  
+    #<strong>create_report</strong>(filename)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a Report that is a summary of the networks. The report has information of all the genes that form the network,  all the KEGG pathway annotation of the network, and all the GO biological process of the network. Also in is specified in each network the binary interactions between genes with their individual KEGG and GO ID. Also indicating if the genes are from the gene_list Or they are intermediary genes that are not on the list, but interacts with them. Finally the report tells if the genes in the list are indeed  binding to each other (the hypothesis).</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>filename</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The name of the report file. Eg: “NetworksReport.txt”</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 128</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_report'>create_report</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='rparen'>)</span>
+	<span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>w</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_file'>file</span><span class='op'>|</span>
+		<span class='id identifier rubyid_net_count'>net_count</span> <span class='op'>=</span> <span class='int'>1</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Network Report\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>By Guillermo Chumaceiro\n\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The networks are formed by the arabidopsis genes defined in </span><span class='embexpr_beg'>#{</span><span class='ivar'>@gene_file</span><span class='embexpr_end'>}</span><span class='tstring_content'>,</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>I used the IntAct database to search meaningful interactions between this genes. The depth of the search is</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>of 3 genes, taking into acount the possibility of intermediary genes not in the list that interact with two genes on the</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>list. The interactions where filtered by the taxonomy ID of arabidopsis and the quality value of the interaction. I decided </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>to consider interactions with quality values &gt;= 0.4.\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Each network is annotated by the  KEGG pathways and GO terms associated with biological process of the genes of each network.</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The GO terms are filtered by evidence: IDA(Inferred from Direct Assay), IMP(Inferred from Mutant Phenotype) and IPI(Inferred from Physical Interaction).\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The following report is a summary of each network and the annotation of the genes in that network.\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='ivar'>@network_list</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_network'>network</span><span class='op'>|</span>
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-</span><span class='tstring_end'>&quot;</span></span><span class='op'>*</span><span class='int'>50</span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Network </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_net_count'>net_count</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The network has </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_network'>network</span><span class='period'>.</span><span class='id identifier rubyid_vertices'>vertices</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span><span class='embexpr_end'>}</span><span class='tstring_content'> genes:\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='id identifier rubyid_network'>network</span><span class='period'>.</span><span class='id identifier rubyid_vertices'>vertices</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'> </span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The global KEGG pathways the genes in this network are involved in are:\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_kegg_hash'>kegg_hash</span> <span class='op'>=</span> <span class='id identifier rubyid_network_kegg'>network_kegg</span><span class='lparen'>(</span><span class='id identifier rubyid_network'>network</span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_kegg_hash'>kegg_hash</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_kegg_id'>kegg_id</span><span class='comma'>,</span> <span class='id identifier rubyid_pathway'>pathway</span><span class='op'>|</span>
+				<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>KEGG ID: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_kegg_id'>kegg_id</span><span class='embexpr_end'>}</span><span class='tstring_content'> with the pathway: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_pathway'>pathway</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='kw'>end</span>
+
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The Biological processes the genes in this network participate in are:\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_go_hash'>go_hash</span> <span class='op'>=</span> <span class='id identifier rubyid_network_go'>network_go</span><span class='lparen'>(</span><span class='id identifier rubyid_network'>network</span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_go_hash'>go_hash</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_go_id'>go_id</span><span class='comma'>,</span> <span class='id identifier rubyid_go_term'>go_term</span><span class='op'>|</span>
+				<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>GO ID: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_go_id'>go_id</span><span class='embexpr_end'>}</span><span class='tstring_content'> with the biological process: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_go_term'>go_term</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='kw'>end</span>
+			
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The interaction of genes in the network is:\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_network'>network</span><span class='period'>.</span><span class='id identifier rubyid_edges'>edges</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_interaction'>interaction</span><span class='op'>|</span> 
+				<span class='kw'>if</span> <span class='ivar'>@id_list</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_interaction'>interaction</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+					<span class='id identifier rubyid_source_text'>source_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Gene ID: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_interaction'>interaction</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+				<span class='kw'>else</span> 
+					<span class='id identifier rubyid_source_text'>source_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Intermediary Gene ID: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_interaction'>interaction</span><span class='period'>.</span><span class='id identifier rubyid_source'>source</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+				<span class='kw'>end</span>
+
+				<span class='kw'>if</span> <span class='ivar'>@id_list</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='id identifier rubyid_interaction'>interaction</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> 
+					<span class='id identifier rubyid_target_text'>target_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Gene ID: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_interaction'>interaction</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+				<span class='kw'>else</span> 
+					<span class='id identifier rubyid_target_text'>target_text</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Intermediary Gene ID: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_interaction'>interaction</span><span class='period'>.</span><span class='id identifier rubyid_target'>target</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+				<span class='kw'>end</span>
+
+				<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_source_text'>source_text</span><span class='embexpr_end'>}</span><span class='tstring_content'>  interacts with </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_target_text'>target_text</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+			<span class='kw'>end</span>
+			<span class='id identifier rubyid_net_count'>net_count</span> <span class='op'>+=</span> <span class='int'>1</span>
+			<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='kw'>end</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>-</span><span class='tstring_end'>&quot;</span></span><span class='op'>*</span><span class='int'>50</span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>End of report</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+	<span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_all_genes-instance_method">
+  
+    #<strong>get_all_genes</strong>  &#x21d2; <tt>Hash&lt;String, <span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get method for the all_genes hash.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash&lt;String, <span class='object_link'><a href="Gene.html" title="Gene (class)">Gene</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A hash of all the genes of gene_file. The key is the AGI locus code and the value is the Gene object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71
+72
+73</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_all_genes'>get_all_genes</span>
+	<span class='kw'>return</span> <span class='ivar'>@all_genes</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_gene-instance_method">
+  
+    #<strong>get_gene</strong>(locus_tag)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Retrieve a Gene object from the all_genes using the AGI Locus ID</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>locus_tag</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the AGI Locus ID.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+79
+80
+81</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 79</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_gene'>get_gene</span><span class='lparen'>(</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rparen'>)</span>
+	<span class='kw'>return</span> <span class='ivar'>@all_genes</span><span class='lbracket'>[</span><span class='id identifier rubyid_locus_tag'>locus_tag</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="network_go-instance_method">
+  
+    #<strong>network_go</strong>(network)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Retrieve all the GO ID and terms of the members of a network</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>network</span>
+      
+      
+        <span class='type'>(<tt>RGL::AdjacencyGraph</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The network of Genes.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+192
+193
+194
+195
+196
+197
+198
+199
+200</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 192</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_network_go'>network_go</span><span class='lparen'>(</span><span class='id identifier rubyid_network'>network</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_go_terms'>go_terms</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> 
+	<span class='comment'># Go through each gene object of the network
+</span>	<span class='id identifier rubyid_network'>network</span><span class='period'>.</span><span class='id identifier rubyid_vertices'>vertices</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span>
+		<span class='comment'># Update the go_terms hash to incude the GO hash of the gene, if it has one.
+</span>		<span class='id identifier rubyid_go_terms'>go_terms</span> <span class='op'>=</span> <span class='id identifier rubyid_go_terms'>go_terms</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_go'>go</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_go'>go</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+	<span class='kw'>end</span>
+	<span class='kw'>return</span> <span class='id identifier rubyid_go_terms'>go_terms</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="network_kegg-instance_method">
+  
+    #<strong>network_kegg</strong>(network)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Retrieve all the KEGG ID and terms of the members of a network</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>network</span>
+      
+      
+        <span class='type'>(<tt>RGL::AdjacencyGraph</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The network of Genes.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+206
+207
+208
+209
+210
+211
+212
+213
+214</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 206</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_network_kegg'>network_kegg</span><span class='lparen'>(</span><span class='id identifier rubyid_network'>network</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_kegg_terms'>kegg_terms</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+	<span class='comment'># Go through each gene object of the network
+</span>	<span class='id identifier rubyid_network'>network</span><span class='period'>.</span><span class='id identifier rubyid_vertices'>vertices</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span>
+		<span class='comment'># Update the kegg_terms hash to incude the KEGG hash of the gene, if it has one.
+</span>		<span class='id identifier rubyid_kegg_terms'>kegg_terms</span> <span class='op'>=</span> <span class='id identifier rubyid_kegg_terms'>kegg_terms</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_kegg'>kegg</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='id identifier rubyid_gene'>gene</span><span class='period'>.</span><span class='id identifier rubyid_kegg'>kegg</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+	<span class='kw'>end</span>
+	<span class='kw'>return</span> <span class='id identifier rubyid_kegg_terms'>kegg_terms</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="save_network-instance_method">
+  
+    #<strong>save_network</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Auxiliary method to print the network in a DOT format, which can be used to visualize the graph in other software, like GraphViz.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li><a href="https://dreampuf.github.io/GraphvizOnline/" target="_parent" title="https://dreampuf.github.io/GraphvizOnline/">https://dreampuf.github.io/GraphvizOnline/</a></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_save_network'>save_network</span>
+	<span class='kw'>return</span> <span class='ivar'>@all_networks</span><span class='period'>.</span><span class='id identifier rubyid_print_dotted_on'>print_dotted_on</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="separate_networks-instance_method">
+  
+    #<strong>separate_networks</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Separate each individual network from all the networks as an RGL undirected graph.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'InteractionNetwork.rb', line 103</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_separate_networks'>separate_networks</span>
+	<span class='comment'># Find the connected components from the whole network. Each connected component is an individual network
+</span>	<span class='ivar'>@all_networks</span><span class='period'>.</span><span class='id identifier rubyid_each_connected_component'>each_connected_component</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_network'>network</span><span class='op'>|</span>
+		<span class='id identifier rubyid_net_graph'>net_graph</span> <span class='op'>=</span> <span class='const'>RGL</span><span class='op'>::</span><span class='const'>AdjacencyGraph</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='comment'># Create an instance of a graph to represent an individual network
+</span>		<span class='comment'># Each Gene of the network
+</span>		<span class='id identifier rubyid_network'>network</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_gene'>gene</span><span class='op'>|</span>
+			<span class='comment'># Search for all adjacent genes (interactions) of the gene in all_networks
+</span>			<span class='ivar'>@all_networks</span><span class='period'>.</span><span class='id identifier rubyid_adjacent_vertices'>adjacent_vertices</span><span class='lparen'>(</span><span class='id identifier rubyid_gene'>gene</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_adjacent'>adjacent</span><span class='op'>|</span> 
+				<span class='comment'># Add each interaction edge to the graph
+</span>				<span class='id identifier rubyid_net_graph'>net_graph</span><span class='period'>.</span><span class='id identifier rubyid_add_edge'>add_edge</span><span class='lparen'>(</span><span class='id identifier rubyid_gene'>gene</span><span class='comma'>,</span> <span class='id identifier rubyid_adjacent'>adjacent</span><span class='rparen'>)</span>
+			<span class='rbrace'>}</span>
+		<span class='rbrace'>}</span>
+		<span class='comment'># A list of networks
+</span>		<span class='ivar'>@network_list</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_net_graph'>net_graph</span>
+	<span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Mon Nov  8 12:59:24 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-3.0.2).
+</div>
+
+    </div>
+  </body>
+</html>

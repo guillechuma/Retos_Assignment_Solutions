@@ -6,133 +6,127 @@ require 'json'  # to handle JSON format
 # This is a representation of a Gene
 # that can interact with other genes.
 #
-# == Summary (what to use the object for)
+# == Summary
 # 
 # It has a unique ID identifier, represented by Arabidopsis AGI code,
 # and also functional annotation from KEGG and GO databases about it.
 # All the data was extracted Using TOGO and the IntAct databases.
-
 class Gene
 
-	# Get/Set the Gene ID
-	# @!attribute [rw] (read/write)
-	# @return [String] The Gene ID
+	# Get/Set the Gene ID AGI Locus Codes
+	# @!attribute [rw] id
+	# @return [String] The Gene ID AGI Locus Codes
 	attr_accessor :id # Unique locus tag ID
 
 	# Get/Set the GO ID
-	# @!attribute [rw] (read/write)
-	# @return [String] The GO ID
+	# @!attribute [rw] go
+	# @return [Hash<String, String>] The GO annotations. The key is the ID and the value is the description of the term.
 	attr_accessor :go # Hash
 
 	# Get/Set the KEGG ID
-	# @!attribute [rw] (read/write)
-	# @return [String] The KEGG ID
-	attr_accessor :kegg # Array
-	# attr_accessor :alt_id # Array
-	# attr_accessor :alias # Array
-	# attr_accessor :taxonomy_id # Array
+	# @!attribute [rw] kegg
+	# @return [Hash<String, String>] The KEGG annotations. The key is the ID and the value is the pathway.
+	attr_accessor :kegg # Hash
+
+	# Class Variable that is a Hash that contains all the genes that are created
+	# @!attribute [r] all_genes
+	# @return [Hash<String, Gene>] A Hash of all the genes created. The key is the Gene ID (AGI Locus Codes) and the value is the Gene Object.
 	@@all_genes = Hash.new
 
-	# Create a new instance of Gene
-
-	# @param name [String] the name of the patient as a String
-	# @param age [Integer] the age of the patient as a Integer
-	# @return [Patient] an instance of Patient
+	# Create a new instance of Gene object
+	# 
+	# @param id [String] The ID: AGI Locus Codes, normalized to upcase
+	# @param go [Hash<String, String>] The GO annotations. The key is the ID and the value is the description of the term.
+	# @param kegg [Hash<String, String>] The KEGG annotations. The key is the ID and the value is the pathway.
+	# @return [Gene] an instance of Gene
 	def initialize(params = {})
-		@id = params.fetch(:id, 'nil')
+		@id = params.fetch(:id, nil)
 		@id = @id.upcase
-		# @alt_id = Array.new
-		# @alias = Array.new
-		# @taxonomy_id = 	Array.new
 		@go = Hash.new
 		@kegg = Hash.new
 		@@all_genes[@id] = self
 	end
 
+	# Class Method to get all the created Gene objects.
+	#
+	# @return [Hash<String, Gene>] the class variable all_genes.
 	def self.all_genes
 		return @@all_genes
 	end
 
-	# Compare genes by locus tag ID
+	# Overwrite the == method to compare genes by AGI Locus Codes (ID)
+	#
+	# @param other [Gene] A Gene object to compare.
+	# @return [Boolean]. True if Genes are the same, false if not.
 	def ==(other)
 		self.id == other.id
 	end
 
-	# Represent gene in string
+	# Overwrite the to_s method to print genes by AGI Locus Codes (ID)
+	#
+	# @return [String]. The Gene ID.
 	def to_s
 		return @id
 	end
 
-	# Retrieve the GO of that gene
+	# Retrieve the GO Biological Process annotation of the Gene using the TOGO REST API
+	#	
+	# @see http://togows.dbcls.jp
+	# @return [Hash<String, String>] The GO Biological Process annotations. The key is the ID and the value is the description of the term.
 	def find_GO
-		go_hash = Hash.new
+		go_hash = Hash.new # Create the hash to store the annotations
+		# Use TOGO API to access the uniprot database, search for the Gene(ID), and access the cross-references section in JSON format
 		go_address = "http://togows.dbcls.jp/entry/uniprot/#{@id}/dr.json" # dr: cross-references section
 
+		# Check if we can fetch the URL
 		if response = fetch(go_address)
-			go_data = JSON.parse(response.body)# It turns it into a Ruby DS. A list of lists.
+			# Parse the response as a JSON object
+			go_data = JSON.parse(response.body) # It turns it into a Ruby DS. A list of lists.
 
+			# Access the JSON data, the result is a Hash
 			go_data = go_data[0]
 
+			# Check if there is a GO Key in the JSON data
 			if go_data.has_key?("GO")
+				# Search the GO terms in the reference data of the Gene
 				go_data["GO"].each do |annotation|
 
-					# Filter by experimental evidence. IDA(Direct Assay), IMP (Mutual phenotype)
-					next unless (annotation[2].match(/IDA\:/) or annotation[2].match(/^IMP\:/) or annotation[2].match(/^IPI\:/)) and annotation[1].match(/^P\:(.*)/)
+					# Filter by experimental evidence. IDA(Direct Assay), IMP (Mutual phenotype), IPI (Inferred protein interaction)
+					# Filter by Biological Process.
+					next unless (annotation[2].match(/^IDA\:/) or annotation[2].match(/^IMP\:/) or annotation[2].match(/^IPI\:/)) and annotation[1].match(/^P\:(.*)/)
+					
+					# Assign the biological proccess (value) to the GO ID (key)
 					go_hash[annotation[0]] = $1.to_s
-					# next unless annotation[2].match(/IDA\:(.*)/) or annotation[2].match(/IMP\:(.*)/)
-					# puts annotation[0] + "      " + $1
-					#puts annotation
 				end
 			end
-			@go = go_hash
+			@go = go_hash # Update the instance variable @go with the annotations
 		end
-		# return nil
 	end
 
-	# Retrieve KEGG pathway
+	# Retrieve the KEGG pathway annotation of the Gene using the TOGO REST API.
+	#
+	# @see http://togows.dbcls.jp
+	# @return [Hash<String, String>] The KEGG annotations. The key is the ID and the value is the pathway.
 	def find_KEGG
+		# Use TOGO API to access the kegg-genes database, search for the Gene(ID), and access the pathways field in JSON format
 		address = "http://togows.org/entry/kegg-genes/ath:#{@id}/pathways.json" # kegg-genes
-
+		
+		# Check if we can fetch the URL
 		if response = fetch(address)
+			# Parse the response as a JSON object
 			data = JSON.parse(response.body)# It turns it into a Ruby DS. A list of lists.
-
+			
+			# Access the JSON data, the result is a Hash
 			data = data[0]
-			@kegg = data
+			@kegg = data # Update the instance variable @kegg with the annotations
 		end
-		# return  nil
 	end
-
-	# def all_names
-	# 	return id + " " + @alt_id.join(" ") + @alias.join(" ")
-	# end
-
-	# def alt_id
-	# 	return @alt_id
-	# end
-
-	# def alt_id=(new_alt_id)
-	# 	@alt_id |= new_alt_id
-	# end
-
-	# def alias
-	# 	return @alias
-	# end
-
-	# def alias=(new_alias)
-	# 	@alias |= new_alias
-	# end
-
-	# def taxonomy_id
-	# 	return @taxonomy_id
-	# end
-
-	# def taxonomy_id=(new_taxonomy_id)
-	# 	@taxonomy_id |= new_taxonomy_id
-	# end
-
 end
 
-
+# Auxiliary function to fetch a URL correctly.
+# 
+# @param url [String] The URL to search.
+# @return [String] The response for the URL.
 def fetch(url, headers = {accept: "*/*"}, user = "", pass="")
     response = RestClient::Request.execute({
       method: :get,

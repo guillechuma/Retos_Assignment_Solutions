@@ -48,15 +48,15 @@ GO ID: GO:0045454 with the biological process: cell redox homeostasis
 GO ID: GO:0140547 with the biological process: acquisition of seed longevity
 
 The interaction of genes in the network is:
-Gene ID (D): AT1G03130 interacts with Gene ID (I): AT4G37260
-Gene ID (I): AT4G37260 interacts with Gene ID (D): AT4G02770
-Gene ID (I): AT4G37260 interacts with Gene ID (D): AT4G09650
-Gene ID (I): AT4G32570 interacts with Gene ID (D): AT4G09650
-Gene ID (I): AT4G32570 interacts with Gene ID (D): AT1G37130
-Gene ID (D): AT1G37130 interacts with Gene ID (I): AT1G31880
-Gene ID (I): AT1G31880 interacts with Gene ID (D): AT1G14280
-Gene ID (I): AT1G31880 interacts with Gene ID (D): AT1G76080
-Gene ID (I): AT1G31880 interacts with Gene ID (D): AT4G02770
+Gene ID (D): AT1G03130  interacts with Gene ID (I): AT4G37260
+Gene ID (I): AT4G37260  interacts with Gene ID (D): AT4G02770
+Gene ID (I): AT4G37260  interacts with Gene ID (D): AT4G09650
+Gene ID (I): AT4G32570  interacts with Gene ID (D): AT4G09650
+Gene ID (I): AT4G32570  interacts with Gene ID (D): AT1G37130
+Gene ID (D): AT1G37130  interacts with Gene ID (I): AT1G31880
+Gene ID (I): AT1G31880  interacts with Gene ID (D): AT1G14280
+Gene ID (I): AT1G31880  interacts with Gene ID (D): AT1G76080
+Gene ID (I): AT1G31880  interacts with Gene ID (D): AT4G02770
 There are 6 Genes that are on the gene list: AT1G03130 AT4G02770 AT4G09650 AT1G37130 AT1G14280 AT1G76080
 There are 3 Genes that are NOT on the gene list: AT4G37260 AT4G32570 AT1G31880
 
@@ -96,20 +96,20 @@ GO ID: GO:0048638 with the biological process: regulation of developmental growt
 GO ID: GO:0080086 with the biological process: stamen filament development
 
 The interaction of genes in the network is:
-Gene ID (I): AT3G15030 interacts with Gene ID (D): AT4G17460
-Gene ID (I): AT3G15030 interacts with Gene ID (D): AT5G17300
-Gene ID (D): AT4G17460 interacts with Gene ID (I): AT3G07220
-Gene ID (D): AT5G17300 interacts with Gene ID (I): AT1G60250
-Gene ID (D): AT5G17300 interacts with Gene ID (I): AT3G02150
-Gene ID (D): AT1G71030 interacts with Gene ID (I): AT1G60250
-Gene ID (I): AT3G02150 interacts with Gene ID (D): AT5G15850
-Gene ID (D): AT5G15850 interacts with Gene ID (I): AT1G53090
-Gene ID (D): AT5G15850 interacts with Gene ID (I): AT2G32950
-Gene ID (D): AT5G15850 interacts with Gene ID (I): AT3G15354
-Gene ID (D): AT5G15850 interacts with Gene ID (I): AT3G07220
-Gene ID (I): AT1G53090 interacts with Gene ID (D): AT2G46340
-Gene ID (D): AT2G46340 interacts with Gene ID (I): AT2G32950
-Gene ID (D): AT2G46340 interacts with Gene ID (I): AT3G15354
+Gene ID (I): AT3G15030  interacts with Gene ID (D): AT4G17460
+Gene ID (I): AT3G15030  interacts with Gene ID (D): AT5G17300
+Gene ID (D): AT4G17460  interacts with Gene ID (I): AT3G07220
+Gene ID (D): AT5G17300  interacts with Gene ID (I): AT1G60250
+Gene ID (D): AT5G17300  interacts with Gene ID (I): AT3G02150
+Gene ID (D): AT1G71030  interacts with Gene ID (I): AT1G60250
+Gene ID (I): AT3G02150  interacts with Gene ID (D): AT5G15850
+Gene ID (D): AT5G15850  interacts with Gene ID (I): AT1G53090
+Gene ID (D): AT5G15850  interacts with Gene ID (I): AT2G32950
+Gene ID (D): AT5G15850  interacts with Gene ID (I): AT3G15354
+Gene ID (D): AT5G15850  interacts with Gene ID (I): AT3G07220
+Gene ID (I): AT1G53090  interacts with Gene ID (D): AT2G46340
+Gene ID (D): AT2G46340  interacts with Gene ID (I): AT2G32950
+Gene ID (D): AT2G46340  interacts with Gene ID (I): AT3G15354
 There are 5 Genes that are on the gene list: AT4G17460 AT5G17300 AT1G71030 AT5G15850 AT2G46340
 There are 7 Genes that are NOT on the gene list: AT3G15030 AT3G07220 AT1G60250 AT3G02150 AT1G53090 AT2G32950 AT3G15354
 
@@ -149,13 +149,13 @@ GO ID: GO:0035304 with the biological process: regulation of protein dephosphory
 GO ID: GO:0015979 with the biological process: photosynthesis
 
 The interaction of genes in the network is:
-Gene ID (D): AT2G39730 interacts with Gene ID (I): AT5G42980
-Gene ID (I): AT5G42980 interacts with Gene ID (D): AT3G55800
-Gene ID (I): AT5G42980 interacts with Gene ID (D): AT3G62410
-Gene ID (I): AT5G42980 interacts with Gene ID (D): AT5G35630
-Gene ID (I): AT5G42980 interacts with Gene ID (D): AT3G50820
-Gene ID (I): AT5G42980 interacts with Gene ID (D): AT5G14740
-Gene ID (I): AT5G42980 interacts with Gene ID (D): AT3G01500
+Gene ID (D): AT2G39730  interacts with Gene ID (I): AT5G42980
+Gene ID (I): AT5G42980  interacts with Gene ID (D): AT3G55800
+Gene ID (I): AT5G42980  interacts with Gene ID (D): AT3G62410
+Gene ID (I): AT5G42980  interacts with Gene ID (D): AT5G35630
+Gene ID (I): AT5G42980  interacts with Gene ID (D): AT3G50820
+Gene ID (I): AT5G42980  interacts with Gene ID (D): AT5G14740
+Gene ID (I): AT5G42980  interacts with Gene ID (D): AT3G01500
 There are 7 Genes that are on the gene list: AT2G39730 AT3G55800 AT3G62410 AT5G35630 AT3G50820 AT5G14740 AT3G01500
 There are 1 Genes that are NOT on the gene list: AT5G42980
 
@@ -175,8 +175,8 @@ GO ID: GO:0009734 with the biological process: auxin-activated signaling pathway
 GO ID: GO:0010182 with the biological process: sugar mediated signaling pathway
 
 The interaction of genes in the network is:
-Gene ID (D): AT4G37610 interacts with Gene ID (I): AT1G26830
-Gene ID (I): AT1G26830 interacts with Gene ID (D): AT3G48360
+Gene ID (D): AT4G37610  interacts with Gene ID (I): AT1G26830
+Gene ID (I): AT1G26830  interacts with Gene ID (D): AT3G48360
 There are 2 Genes that are on the gene list: AT4G37610 AT3G48360
 There are 1 Genes that are NOT on the gene list: AT1G26830
 

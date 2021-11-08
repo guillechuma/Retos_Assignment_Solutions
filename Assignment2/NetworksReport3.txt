@@ -1,19 +1,22 @@
 Network Report
 By Guillermo Chumaceiro
 
-The networks are formed by the arabidopsis genes defined in ArabidopsisSubNetwork_GeneList.txt, 
-				I used the IntAct database to search meaningful interactions between this genes. The depth of the search is
-				of 3 genes, taking into acount the possibility of intermediary genes not in the list that interact with two genes on the
-				list. The interactions where filtered by the taxonomy ID of arabidopsis and the quality value of the interaction. I decided 
-				to consider interactions with quality values >= 0.4.
-Each network is annotated by the KEGG pathways and GO terms associated with biological process of the genes of each network.
-				The GO terms are filtered by evidence: IDA(Inferred from Direct Assay), IMP(Inferred from Mutant Phenotype) and IPI(Inferred from Physical Interaction).
+The networks are formed by the arabidopsis genes defined in ArabidopsisSubNetwork_GeneList.txt,I used the IntAct database to search meaningful interactions between this genes.
+The depth of the search is of 3 genes, taking into acount the possibility of intermediary genes not in the list that interact with two genes on the list.
+The interactions where filtered by the taxonomy ID of arabidopsis and the quality value of the interaction.
+I decided to consider interactions with quality values >= 0.4.
+Each network is annotated by the  KEGG pathways and GO terms associated with biological process of the genes of each network.
+The GO terms are filtered by evidence: IDA(Inferred from Direct Assay), IMP(Inferred from Mutant Phenotype) and IPI(Inferred from Physical Interaction).
 The following report is a summary of each network and the annotation of the genes in that network.
+Keywords:
+	I: Indirect gene that interacts (not found on the gene list).
+	D: Direct gene that interacts (it is on the gene list).
 --------------------------------------------------
-Network 1:
-The network has 9 genes and is composed of the following genes:
+Network 1
+The network has 9 genes:
 AT1G03130 AT4G37260 AT4G32570 AT4G09650 AT1G37130 AT1G31880 AT1G14280 AT1G76080 AT4G02770
-The global pathways the genes in this network are involved with are:
+
+The global KEGG pathways the genes in this network are involved in are:
 KEGG ID: ath00195 with the pathway: Photosynthesis
 KEGG ID: ath01100 with the pathway: Metabolic pathways
 KEGG ID: ath00190 with the pathway: Oxidative phosphorylation
@@ -45,21 +48,24 @@ GO ID: GO:0045454 with the biological process: cell redox homeostasis
 GO ID: GO:0140547 with the biological process: acquisition of seed longevity
 
 The interaction of genes in the network is:
-Gene ID: AT1G03130 interacts with Intermediary Gene ID: AT4G37260
-Intermediary Gene ID: AT4G37260 interacts with Gene ID: AT4G02770
-Intermediary Gene ID: AT4G37260 interacts with Gene ID: AT4G09650
-Intermediary Gene ID: AT4G32570 interacts with Gene ID: AT4G09650
-Intermediary Gene ID: AT4G32570 interacts with Gene ID: AT1G37130
-Gene ID: AT1G37130 interacts with Intermediary Gene ID: AT1G31880
-Intermediary Gene ID: AT1G31880 interacts with Gene ID: AT1G14280
-Intermediary Gene ID: AT1G31880 interacts with Gene ID: AT1G76080
-Intermediary Gene ID: AT1G31880 interacts with Gene ID: AT4G02770
+Gene ID (D): AT1G03130 interacts with Gene ID (I): AT4G37260
+Gene ID (I): AT4G37260 interacts with Gene ID (D): AT4G02770
+Gene ID (I): AT4G37260 interacts with Gene ID (D): AT4G09650
+Gene ID (I): AT4G32570 interacts with Gene ID (D): AT4G09650
+Gene ID (I): AT4G32570 interacts with Gene ID (D): AT1G37130
+Gene ID (D): AT1G37130 interacts with Gene ID (I): AT1G31880
+Gene ID (I): AT1G31880 interacts with Gene ID (D): AT1G14280
+Gene ID (I): AT1G31880 interacts with Gene ID (D): AT1G76080
+Gene ID (I): AT1G31880 interacts with Gene ID (D): AT4G02770
+There are 6 Genes that are on the gene list: AT1G03130 AT4G02770 AT4G09650 AT1G37130 AT1G14280 AT1G76080
+There are 3 Genes that are NOT on the gene list: AT4G37260 AT4G32570 AT1G31880
 
 --------------------------------------------------
-Network 2:
-The network has 12 genes and is composed of the following genes:
+Network 2
+The network has 12 genes:
 AT3G15030 AT4G17460 AT5G17300 AT1G71030 AT1G60250 AT3G02150 AT5G15850 AT1G53090 AT2G46340 AT2G32950 AT3G15354 AT3G07220
-The global pathways the genes in this network are involved with are:
+
+The global KEGG pathways the genes in this network are involved in are:
 KEGG ID: ath04712 with the pathway: Circadian rhythm - plant
 KEGG ID: ath04120 with the pathway: Ubiquitin mediated proteolysis
 
@@ -90,26 +96,29 @@ GO ID: GO:0048638 with the biological process: regulation of developmental growt
 GO ID: GO:0080086 with the biological process: stamen filament development
 
 The interaction of genes in the network is:
-Intermediary Gene ID: AT3G15030 interacts with Gene ID: AT4G17460
-Intermediary Gene ID: AT3G15030 interacts with Gene ID: AT5G17300
-Gene ID: AT4G17460 interacts with Intermediary Gene ID: AT3G07220
-Gene ID: AT5G17300 interacts with Intermediary Gene ID: AT1G60250
-Gene ID: AT5G17300 interacts with Intermediary Gene ID: AT3G02150
-Gene ID: AT1G71030 interacts with Intermediary Gene ID: AT1G60250
-Intermediary Gene ID: AT3G02150 interacts with Gene ID: AT5G15850
-Gene ID: AT5G15850 interacts with Intermediary Gene ID: AT1G53090
-Gene ID: AT5G15850 interacts with Intermediary Gene ID: AT2G32950
-Gene ID: AT5G15850 interacts with Intermediary Gene ID: AT3G15354
-Gene ID: AT5G15850 interacts with Intermediary Gene ID: AT3G07220
-Intermediary Gene ID: AT1G53090 interacts with Gene ID: AT2G46340
-Gene ID: AT2G46340 interacts with Intermediary Gene ID: AT2G32950
-Gene ID: AT2G46340 interacts with Intermediary Gene ID: AT3G15354
+Gene ID (I): AT3G15030 interacts with Gene ID (D): AT4G17460
+Gene ID (I): AT3G15030 interacts with Gene ID (D): AT5G17300
+Gene ID (D): AT4G17460 interacts with Gene ID (I): AT3G07220
+Gene ID (D): AT5G17300 interacts with Gene ID (I): AT1G60250
+Gene ID (D): AT5G17300 interacts with Gene ID (I): AT3G02150
+Gene ID (D): AT1G71030 interacts with Gene ID (I): AT1G60250
+Gene ID (I): AT3G02150 interacts with Gene ID (D): AT5G15850
+Gene ID (D): AT5G15850 interacts with Gene ID (I): AT1G53090
+Gene ID (D): AT5G15850 interacts with Gene ID (I): AT2G32950
+Gene ID (D): AT5G15850 interacts with Gene ID (I): AT3G15354
+Gene ID (D): AT5G15850 interacts with Gene ID (I): AT3G07220
+Gene ID (I): AT1G53090 interacts with Gene ID (D): AT2G46340
+Gene ID (D): AT2G46340 interacts with Gene ID (I): AT2G32950
+Gene ID (D): AT2G46340 interacts with Gene ID (I): AT3G15354
+There are 5 Genes that are on the gene list: AT4G17460 AT5G17300 AT1G71030 AT5G15850 AT2G46340
+There are 7 Genes that are NOT on the gene list: AT3G15030 AT3G07220 AT1G60250 AT3G02150 AT1G53090 AT2G32950 AT3G15354
 
 --------------------------------------------------
-Network 3:
-The network has 8 genes and is composed of the following genes:
+Network 3
+The network has 8 genes:
 AT2G39730 AT5G42980 AT3G55800 AT3G62410 AT5G35630 AT3G50820 AT5G14740 AT3G01500
-The global pathways the genes in this network are involved with are:
+
+The global KEGG pathways the genes in this network are involved in are:
 KEGG ID: ath00710 with the pathway: Carbon fixation in photosynthetic organisms
 KEGG ID: ath01100 with the pathway: Metabolic pathways
 KEGG ID: ath01200 with the pathway: Carbon metabolism
@@ -140,19 +149,22 @@ GO ID: GO:0035304 with the biological process: regulation of protein dephosphory
 GO ID: GO:0015979 with the biological process: photosynthesis
 
 The interaction of genes in the network is:
-Gene ID: AT2G39730 interacts with Intermediary Gene ID: AT5G42980
-Intermediary Gene ID: AT5G42980 interacts with Gene ID: AT3G55800
-Intermediary Gene ID: AT5G42980 interacts with Gene ID: AT3G62410
-Intermediary Gene ID: AT5G42980 interacts with Gene ID: AT5G35630
-Intermediary Gene ID: AT5G42980 interacts with Gene ID: AT3G50820
-Intermediary Gene ID: AT5G42980 interacts with Gene ID: AT5G14740
-Intermediary Gene ID: AT5G42980 interacts with Gene ID: AT3G01500
+Gene ID (D): AT2G39730 interacts with Gene ID (I): AT5G42980
+Gene ID (I): AT5G42980 interacts with Gene ID (D): AT3G55800
+Gene ID (I): AT5G42980 interacts with Gene ID (D): AT3G62410
+Gene ID (I): AT5G42980 interacts with Gene ID (D): AT5G35630
+Gene ID (I): AT5G42980 interacts with Gene ID (D): AT3G50820
+Gene ID (I): AT5G42980 interacts with Gene ID (D): AT5G14740
+Gene ID (I): AT5G42980 interacts with Gene ID (D): AT3G01500
+There are 7 Genes that are on the gene list: AT2G39730 AT3G55800 AT3G62410 AT5G35630 AT3G50820 AT5G14740 AT3G01500
+There are 1 Genes that are NOT on the gene list: AT5G42980
 
 --------------------------------------------------
-Network 4:
-The network has 3 genes and is composed of the following genes:
+Network 4
+The network has 3 genes:
 AT4G37610 AT1G26830 AT3G48360
-The global pathways the genes in this network are involved with are:
+
+The global KEGG pathways the genes in this network are involved in are:
 KEGG ID: ath04120 with the pathway: Ubiquitin mediated proteolysis
 
 The Biological processes the genes in this network participate in are:
@@ -163,8 +175,13 @@ GO ID: GO:0009734 with the biological process: auxin-activated signaling pathway
 GO ID: GO:0010182 with the biological process: sugar mediated signaling pathway
 
 The interaction of genes in the network is:
-Gene ID: AT4G37610 interacts with Intermediary Gene ID: AT1G26830
-Intermediary Gene ID: AT1G26830 interacts with Gene ID: AT3G48360
+Gene ID (D): AT4G37610 interacts with Gene ID (I): AT1G26830
+Gene ID (I): AT1G26830 interacts with Gene ID (D): AT3G48360
+There are 2 Genes that are on the gene list: AT4G37610 AT3G48360
+There are 1 Genes that are NOT on the gene list: AT1G26830
 
 --------------------------------------------------
+20 Genes interact with each other out of a total of 168 Genes. 11.9% of the genes in the list interact with each other.
+In conclusion, the number of co-expressed genes that interacts with each other is low (less than 50%).
+
 End of report
