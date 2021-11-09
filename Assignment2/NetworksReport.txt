@@ -6,7 +6,6 @@ The depth of the search is of 3 genes, taking into acount the possibility of int
 The interactions where filtered by the taxonomy ID of arabidopsis and the quality value of the interaction.
 I decided to consider interactions with quality values >= 0.4.
 Each network is annotated by the  KEGG pathways and GO terms associated with biological process of the genes of each network.
-The GO terms are filtered by evidence: IDA(Inferred from Direct Assay), IMP(Inferred from Mutant Phenotype) and IPI(Inferred from Physical Interaction).
 The following report is a summary of each network and the annotation of the genes in that network.
 Keywords:
 	I: Indirect gene that interacts (not found on the gene list).
@@ -14,7 +13,93 @@ Keywords:
 --------------------------------------------------
 Network 1
 The network has 9 genes:
-AT1G03130 AT4G37260 AT4G32570 AT4G09650 AT1G37130 AT1G31880 AT1G14280 AT1G76080 AT4G02770
+AT1G03130
+	GO terms
+		GO ID: GO:0015979	GO biological process: photosynthesis
+	KEGG pathways
+		KEGG ID: ath00195	KEGG Pathway: Photosynthesis
+		KEGG ID: ath01100	KEGG Pathway: Metabolic pathways
+
+AT4G37260
+	GO terms
+		GO ID: GO:0019760	GO biological process: glucosinolate metabolic process
+		GO ID: GO:1901001	GO biological process: negative regulation of response to salt stress
+		GO ID: GO:0010929	GO biological process: positive regulation of auxin mediated signaling pathway
+		GO ID: GO:0006355	GO biological process: regulation of transcription, DNA-templated
+		GO ID: GO:0010200	GO biological process: response to chitin
+		GO ID: GO:0006122	GO biological process: mitochondrial electron transport, ubiquinol to cytochrome c
+	No KEGG pathways
+
+AT4G32570
+	GO terms
+		GO ID: GO:0031347	GO biological process: regulation of defense response
+		GO ID: GO:2000022	GO biological process: regulation of jasmonic acid mediated signaling pathway
+		GO ID: GO:0009611	GO biological process: response to wounding
+	No KEGG pathways
+
+AT4G09650
+	GO terms
+		GO ID: GO:0015986	GO biological process: ATP synthesis coupled proton transport
+		GO ID: GO:0042742	GO biological process: defense response to bacterium
+		GO ID: GO:0015979	GO biological process: photosynthesis
+		GO ID: GO:0009773	GO biological process: photosynthetic electron transport in photosystem I
+		GO ID: GO:0009772	GO biological process: photosynthetic electron transport in photosystem II
+		GO ID: GO:0009409	GO biological process: response to cold
+		GO ID: GO:0035556	GO biological process: intracellular signal transduction
+	KEGG pathways
+		KEGG ID: ath00190	KEGG Pathway: Oxidative phosphorylation
+		KEGG ID: ath00195	KEGG Pathway: Photosynthesis
+		KEGG ID: ath01100	KEGG Pathway: Metabolic pathways
+
+AT1G37130
+	GO terms
+		GO ID: GO:0042128	GO biological process: nitrate assimilation
+		GO ID: GO:0006809	GO biological process: nitric oxide biosynthetic process
+		GO ID: GO:0009635	GO biological process: response to herbicide
+		GO ID: GO:0009416	GO biological process: response to light stimulus
+		GO ID: GO:0009610	GO biological process: response to symbiotic fungus
+	KEGG pathways
+		KEGG ID: ath00910	KEGG Pathway: Nitrogen metabolism
+		KEGG ID: ath01100	KEGG Pathway: Metabolic pathways
+
+AT1G31880
+	GO terms
+		GO ID: GO:0009734	GO biological process: auxin-activated signaling pathway
+		GO ID: GO:0030154	GO biological process: cell differentiation
+		GO ID: GO:0009736	GO biological process: cytokinin-activated signaling pathway
+		GO ID: GO:0048527	GO biological process: lateral root development
+		GO ID: GO:0010078	GO biological process: maintenance of root meristem identity
+		GO ID: GO:0010088	GO biological process: phloem development
+		GO ID: GO:2000280	GO biological process: regulation of root development
+		GO ID: GO:0009737	GO biological process: response to abscisic acid
+		GO ID: GO:0048364	GO biological process: root development
+		GO ID: GO:0048756	GO biological process: sieve cell differentiation
+	No KEGG pathways
+
+AT1G14280
+	GO terms
+		GO ID: GO:0048366	GO biological process: leaf development
+		GO ID: GO:0009638	GO biological process: phototropism
+		GO ID: GO:0009585	GO biological process: red, far-red light phototransduction
+	No KEGG pathways
+
+AT1G76080
+	GO terms
+		GO ID: GO:0045454	GO biological process: cell redox homeostasis
+		GO ID: GO:0006979	GO biological process: response to oxidative stress
+		GO ID: GO:0009414	GO biological process: response to water deprivation
+	No KEGG pathways
+
+AT4G02770
+	GO terms
+		GO ID: GO:0140547	GO biological process: acquisition of seed longevity
+		GO ID: GO:0015979	GO biological process: photosynthesis
+		GO ID: GO:0035556	GO biological process: intracellular signal transduction
+	KEGG pathways
+		KEGG ID: ath00195	KEGG Pathway: Photosynthesis
+		KEGG ID: ath01100	KEGG Pathway: Metabolic pathways
+
+
 
 The global KEGG pathways the genes in this network are involved in are:
 KEGG ID: ath00195 with the pathway: Photosynthesis
@@ -23,16 +108,27 @@ KEGG ID: ath00190 with the pathway: Oxidative phosphorylation
 KEGG ID: ath00910 with the pathway: Nitrogen metabolism
 
 The Biological processes the genes in this network participate in are:
+GO ID: GO:0015979 with the biological process: photosynthesis
 GO ID: GO:0019760 with the biological process: glucosinolate metabolic process
 GO ID: GO:1901001 with the biological process: negative regulation of response to salt stress
 GO ID: GO:0010929 with the biological process: positive regulation of auxin mediated signaling pathway
 GO ID: GO:0006355 with the biological process: regulation of transcription, DNA-templated
-GO ID: GO:0015979 with the biological process: photosynthesis
+GO ID: GO:0010200 with the biological process: response to chitin
+GO ID: GO:0006122 with the biological process: mitochondrial electron transport, ubiquinol to cytochrome c
+GO ID: GO:0031347 with the biological process: regulation of defense response
+GO ID: GO:2000022 with the biological process: regulation of jasmonic acid mediated signaling pathway
+GO ID: GO:0009611 with the biological process: response to wounding
+GO ID: GO:0015986 with the biological process: ATP synthesis coupled proton transport
+GO ID: GO:0042742 with the biological process: defense response to bacterium
 GO ID: GO:0009773 with the biological process: photosynthetic electron transport in photosystem I
 GO ID: GO:0009772 with the biological process: photosynthetic electron transport in photosystem II
+GO ID: GO:0009409 with the biological process: response to cold
+GO ID: GO:0035556 with the biological process: intracellular signal transduction
 GO ID: GO:0042128 with the biological process: nitrate assimilation
 GO ID: GO:0006809 with the biological process: nitric oxide biosynthetic process
+GO ID: GO:0009635 with the biological process: response to herbicide
 GO ID: GO:0009416 with the biological process: response to light stimulus
+GO ID: GO:0009610 with the biological process: response to symbiotic fungus
 GO ID: GO:0009734 with the biological process: auxin-activated signaling pathway
 GO ID: GO:0030154 with the biological process: cell differentiation
 GO ID: GO:0009736 with the biological process: cytokinin-activated signaling pathway
@@ -44,7 +140,11 @@ GO ID: GO:0009737 with the biological process: response to abscisic acid
 GO ID: GO:0048364 with the biological process: root development
 GO ID: GO:0048756 with the biological process: sieve cell differentiation
 GO ID: GO:0048366 with the biological process: leaf development
+GO ID: GO:0009638 with the biological process: phototropism
+GO ID: GO:0009585 with the biological process: red, far-red light phototransduction
 GO ID: GO:0045454 with the biological process: cell redox homeostasis
+GO ID: GO:0006979 with the biological process: response to oxidative stress
+GO ID: GO:0009414 with the biological process: response to water deprivation
 GO ID: GO:0140547 with the biological process: acquisition of seed longevity
 
 The interaction of genes in the network is:
@@ -63,7 +163,117 @@ There are 3 Genes that are NOT on the gene list: AT4G37260 AT4G32570 AT1G31880
 --------------------------------------------------
 Network 2
 The network has 12 genes:
-AT3G15030 AT4G17460 AT5G17300 AT1G71030 AT1G60250 AT3G02150 AT5G15850 AT1G53090 AT2G46340 AT2G32950 AT3G15354 AT3G07220
+AT3G15030
+	GO terms
+		GO ID: GO:0048825	GO biological process: cotyledon development
+		GO ID: GO:0048826	GO biological process: cotyledon morphogenesis
+		GO ID: GO:0009793	GO biological process: embryo development ending in seed dormancy
+		GO ID: GO:0048366	GO biological process: leaf development
+		GO ID: GO:0010150	GO biological process: leaf senescence
+		GO ID: GO:0006355	GO biological process: regulation of transcription, DNA-templated
+		GO ID: GO:0009854	GO biological process: oxidative photosynthetic carbon pathway
+	No KEGG pathways
+
+AT4G17460
+	GO terms
+		GO ID: GO:0003006	GO biological process: developmental process involved in reproduction
+		GO ID: GO:0010582	GO biological process: floral meristem determinacy
+		GO ID: GO:0080127	GO biological process: fruit septum development
+		GO ID: GO:0048467	GO biological process: gynoecium development
+	No KEGG pathways
+
+AT5G17300
+	GO terms
+		GO ID: GO:0009734	GO biological process: auxin-activated signaling pathway
+		GO ID: GO:0007623	GO biological process: circadian rhythm
+		GO ID: GO:0010600	GO biological process: regulation of auxin biosynthetic process
+		GO ID: GO:0006355	GO biological process: regulation of transcription, DNA-templated
+		GO ID: GO:0016567	GO biological process: protein ubiquitination
+	No KEGG pathways
+
+AT1G71030
+	GO terms
+		GO ID: GO:0009718	GO biological process: anthocyanin-containing compound biosynthetic process
+		GO ID: GO:0010023	GO biological process: proanthocyanidin biosynthetic process
+		GO ID: GO:0030154	GO biological process: cell differentiation
+	No KEGG pathways
+
+AT1G60250
+	GO terms
+		GO ID: GO:0006355	GO biological process: regulation of transcription, DNA-templated
+	No KEGG pathways
+
+AT3G02150
+	GO terms
+		GO ID: GO:0048366	GO biological process: leaf development
+		GO ID: GO:0010150	GO biological process: leaf senescence
+		GO ID: GO:0031347	GO biological process: regulation of defense response
+		GO ID: GO:2000032	GO biological process: regulation of secondary shoot formation
+		GO ID: GO:0006355	GO biological process: regulation of transcription, DNA-templated
+		GO ID: GO:0006021	GO biological process: inositol biosynthetic process
+		GO ID: GO:0046855	GO biological process: inositol phosphate dephosphorylation
+		GO ID: GO:0046854	GO biological process: phosphatidylinositol phosphorylation
+	No KEGG pathways
+
+AT5G15850
+	GO terms
+		GO ID: GO:0009909	GO biological process: regulation of flower development
+		GO ID: GO:0000398	GO biological process: mRNA splicing, via spliceosome
+	No KEGG pathways
+
+AT1G53090
+	GO terms
+		GO ID: GO:0009640	GO biological process: photomorphogenesis
+		GO ID: GO:0009585	GO biological process: red, far-red light phototransduction
+		GO ID: GO:0009637	GO biological process: response to blue light
+	No KEGG pathways
+
+AT2G46340
+	GO terms
+		GO ID: GO:0009658	GO biological process: chloroplast organization
+		GO ID: GO:0010100	GO biological process: negative regulation of photomorphogenesis
+		GO ID: GO:0009640	GO biological process: photomorphogenesis
+		GO ID: GO:0010017	GO biological process: red or far-red light signaling pathway
+		GO ID: GO:0009585	GO biological process: red, far-red light phototransduction
+		GO ID: GO:2000028	GO biological process: regulation of photoperiodism, flowering
+		GO ID: GO:0009637	GO biological process: response to blue light
+		GO ID: GO:0010218	GO biological process: response to far red light
+		GO ID: GO:0010114	GO biological process: response to red light
+		GO ID: GO:0048575	GO biological process: short-day photoperiodism, flowering
+	KEGG pathways
+		KEGG ID: ath04712	KEGG Pathway: Circadian rhythm - plant
+
+AT2G32950
+	GO terms
+		GO ID: GO:0046283	GO biological process: anthocyanin-containing compound metabolic process
+		GO ID: GO:0006281	GO biological process: DNA repair
+		GO ID: GO:0009649	GO biological process: entrainment of circadian clock
+		GO ID: GO:0009640	GO biological process: photomorphogenesis
+		GO ID: GO:0048573	GO biological process: photoperiodism, flowering
+		GO ID: GO:0009585	GO biological process: red, far-red light phototransduction
+		GO ID: GO:0010119	GO biological process: regulation of stomatal movement
+		GO ID: GO:0009641	GO biological process: shade avoidance
+		GO ID: GO:0009647	GO biological process: skotomorphogenesis
+	KEGG pathways
+		KEGG ID: ath04120	KEGG Pathway: Ubiquitin mediated proteolysis
+		KEGG ID: ath04712	KEGG Pathway: Circadian rhythm - plant
+
+AT3G15354
+	GO terms
+		GO ID: GO:0009640	GO biological process: photomorphogenesis
+		GO ID: GO:0009585	GO biological process: red, far-red light phototransduction
+	No KEGG pathways
+
+AT3G07220
+	GO terms
+		GO ID: GO:0006338	GO biological process: chromatin remodeling
+		GO ID: GO:0048638	GO biological process: regulation of developmental growth
+		GO ID: GO:0080086	GO biological process: stamen filament development
+		GO ID: GO:0035998	GO biological process: 7,8-dihydroneopterin 3'-triphosphate biosynthetic process
+		GO ID: GO:0046654	GO biological process: tetrahydrofolate biosynthetic process
+	No KEGG pathways
+
+
 
 The global KEGG pathways the genes in this network are involved in are:
 KEGG ID: ath04712 with the pathway: Circadian rhythm - plant
@@ -71,19 +281,39 @@ KEGG ID: ath04120 with the pathway: Ubiquitin mediated proteolysis
 
 The Biological processes the genes in this network participate in are:
 GO ID: GO:0048825 with the biological process: cotyledon development
+GO ID: GO:0048826 with the biological process: cotyledon morphogenesis
 GO ID: GO:0009793 with the biological process: embryo development ending in seed dormancy
+GO ID: GO:0048366 with the biological process: leaf development
+GO ID: GO:0010150 with the biological process: leaf senescence
+GO ID: GO:0006355 with the biological process: regulation of transcription, DNA-templated
+GO ID: GO:0009854 with the biological process: oxidative photosynthetic carbon pathway
+GO ID: GO:0003006 with the biological process: developmental process involved in reproduction
+GO ID: GO:0010582 with the biological process: floral meristem determinacy
+GO ID: GO:0080127 with the biological process: fruit septum development
+GO ID: GO:0048467 with the biological process: gynoecium development
 GO ID: GO:0009734 with the biological process: auxin-activated signaling pathway
+GO ID: GO:0007623 with the biological process: circadian rhythm
 GO ID: GO:0010600 with the biological process: regulation of auxin biosynthetic process
+GO ID: GO:0016567 with the biological process: protein ubiquitination
 GO ID: GO:0009718 with the biological process: anthocyanin-containing compound biosynthetic process
 GO ID: GO:0010023 with the biological process: proanthocyanidin biosynthetic process
+GO ID: GO:0030154 with the biological process: cell differentiation
 GO ID: GO:0031347 with the biological process: regulation of defense response
+GO ID: GO:2000032 with the biological process: regulation of secondary shoot formation
+GO ID: GO:0006021 with the biological process: inositol biosynthetic process
+GO ID: GO:0046855 with the biological process: inositol phosphate dephosphorylation
+GO ID: GO:0046854 with the biological process: phosphatidylinositol phosphorylation
 GO ID: GO:0009909 with the biological process: regulation of flower development
+GO ID: GO:0000398 with the biological process: mRNA splicing, via spliceosome
+GO ID: GO:0009640 with the biological process: photomorphogenesis
+GO ID: GO:0009585 with the biological process: red, far-red light phototransduction
 GO ID: GO:0009637 with the biological process: response to blue light
 GO ID: GO:0009658 with the biological process: chloroplast organization
 GO ID: GO:0010100 with the biological process: negative regulation of photomorphogenesis
-GO ID: GO:0009640 with the biological process: photomorphogenesis
 GO ID: GO:0010017 with the biological process: red or far-red light signaling pathway
 GO ID: GO:2000028 with the biological process: regulation of photoperiodism, flowering
+GO ID: GO:0010218 with the biological process: response to far red light
+GO ID: GO:0010114 with the biological process: response to red light
 GO ID: GO:0048575 with the biological process: short-day photoperiodism, flowering
 GO ID: GO:0046283 with the biological process: anthocyanin-containing compound metabolic process
 GO ID: GO:0006281 with the biological process: DNA repair
@@ -91,9 +321,12 @@ GO ID: GO:0009649 with the biological process: entrainment of circadian clock
 GO ID: GO:0048573 with the biological process: photoperiodism, flowering
 GO ID: GO:0010119 with the biological process: regulation of stomatal movement
 GO ID: GO:0009641 with the biological process: shade avoidance
+GO ID: GO:0009647 with the biological process: skotomorphogenesis
 GO ID: GO:0006338 with the biological process: chromatin remodeling
 GO ID: GO:0048638 with the biological process: regulation of developmental growth
 GO ID: GO:0080086 with the biological process: stamen filament development
+GO ID: GO:0035998 with the biological process: 7,8-dihydroneopterin 3'-triphosphate biosynthetic process
+GO ID: GO:0046654 with the biological process: tetrahydrofolate biosynthetic process
 
 The interaction of genes in the network is:
 Gene ID (I): AT3G15030 interacts with Gene ID (D): AT4G17460
@@ -116,7 +349,105 @@ There are 7 Genes that are NOT on the gene list: AT3G15030 AT3G07220 AT1G60250 A
 --------------------------------------------------
 Network 3
 The network has 8 genes:
-AT2G39730 AT5G42980 AT3G55800 AT3G62410 AT5G35630 AT3G50820 AT5G14740 AT3G01500
+AT2G39730
+	GO terms
+		GO ID: GO:0042742	GO biological process: defense response to bacterium
+		GO ID: GO:0010150	GO biological process: leaf senescence
+		GO ID: GO:0009409	GO biological process: response to cold
+		GO ID: GO:0009753	GO biological process: response to jasmonic acid
+		GO ID: GO:0009416	GO biological process: response to light stimulus
+	No KEGG pathways
+
+AT5G42980
+	GO terms
+		GO ID: GO:0050832	GO biological process: defense response to fungus
+		GO ID: GO:0010286	GO biological process: heat acclimation
+		GO ID: GO:0051259	GO biological process: protein complex oligomerization
+		GO ID: GO:0006457	GO biological process: protein folding
+		GO ID: GO:0009408	GO biological process: response to heat
+		GO ID: GO:0010188	GO biological process: response to microbial phytotoxin
+	No KEGG pathways
+
+AT3G55800
+	GO terms
+		GO ID: GO:0016051	GO biological process: carbohydrate biosynthetic process
+		GO ID: GO:0042742	GO biological process: defense response to bacterium
+		GO ID: GO:0030388	GO biological process: fructose 1,6-bisphosphate metabolic process
+		GO ID: GO:0006002	GO biological process: fructose 6-phosphate metabolic process
+		GO ID: GO:0006000	GO biological process: fructose metabolic process
+		GO ID: GO:0006094	GO biological process: gluconeogenesis
+		GO ID: GO:0019253	GO biological process: reductive pentose-phosphate cycle
+		GO ID: GO:0019252	GO biological process: starch biosynthetic process
+		GO ID: GO:0005986	GO biological process: sucrose biosynthetic process
+		GO ID: GO:0005975	GO biological process: carbohydrate metabolic process
+	KEGG pathways
+		KEGG ID: ath00710	KEGG Pathway: Carbon fixation in photosynthetic organisms
+		KEGG ID: ath01100	KEGG Pathway: Metabolic pathways
+		KEGG ID: ath01200	KEGG Pathway: Carbon metabolism
+
+AT3G62410
+	GO terms
+		GO ID: GO:0071454	GO biological process: cellular response to anoxia
+		GO ID: GO:0070417	GO biological process: cellular response to cold
+		GO ID: GO:0034605	GO biological process: cellular response to heat
+		GO ID: GO:0080153	GO biological process: negative regulation of reductive pentose-phosphate cycle
+		GO ID: GO:0018316	GO biological process: peptide cross-linking via L-cystine
+		GO ID: GO:0065003	GO biological process: protein-containing complex assembly
+		GO ID: GO:0019253	GO biological process: reductive pentose-phosphate cycle
+		GO ID: GO:0009416	GO biological process: response to light stimulus
+		GO ID: GO:0009744	GO biological process: response to sucrose
+	No KEGG pathways
+
+AT5G35630
+	GO terms
+		GO ID: GO:0007568	GO biological process: aging
+		GO ID: GO:0019676	GO biological process: ammonia assimilation cycle
+		GO ID: GO:0006542	GO biological process: glutamine biosynthetic process
+		GO ID: GO:0046686	GO biological process: response to cadmium ion
+		GO ID: GO:0006807	GO biological process: nitrogen compound metabolic process
+	KEGG pathways
+		KEGG ID: ath00220	KEGG Pathway: Arginine biosynthesis
+		KEGG ID: ath00250	KEGG Pathway: Alanine, aspartate and glutamate metabolism
+		KEGG ID: ath00630	KEGG Pathway: Glyoxylate and dicarboxylate metabolism
+		KEGG ID: ath00910	KEGG Pathway: Nitrogen metabolism
+		KEGG ID: ath01100	KEGG Pathway: Metabolic pathways
+		KEGG ID: ath01230	KEGG Pathway: Biosynthesis of amino acids
+
+AT3G50820
+	GO terms
+		GO ID: GO:0010205	GO biological process: photoinhibition
+		GO ID: GO:0019684	GO biological process: photosynthesis, light reaction
+		GO ID: GO:0010207	GO biological process: photosystem II assembly
+		GO ID: GO:0042549	GO biological process: photosystem II stabilization
+		GO ID: GO:0035304	GO biological process: regulation of protein dephosphorylation
+	KEGG pathways
+		KEGG ID: ath00195	KEGG Pathway: Photosynthesis
+		KEGG ID: ath01100	KEGG Pathway: Metabolic pathways
+
+AT5G14740
+	GO terms
+		GO ID: GO:0015976	GO biological process: carbon utilization
+		GO ID: GO:0042742	GO biological process: defense response to bacterium
+		GO ID: GO:0006865	GO biological process: amino acid transport
+	KEGG pathways
+		KEGG ID: ath00910	KEGG Pathway: Nitrogen metabolism
+		KEGG ID: ath01100	KEGG Pathway: Metabolic pathways
+
+AT3G01500
+	GO terms
+		GO ID: GO:0015976	GO biological process: carbon utilization
+		GO ID: GO:0042742	GO biological process: defense response to bacterium
+		GO ID: GO:0050832	GO biological process: defense response to fungus
+		GO ID: GO:2000122	GO biological process: negative regulation of stomatal complex development
+		GO ID: GO:0015979	GO biological process: photosynthesis
+		GO ID: GO:0010119	GO biological process: regulation of stomatal movement
+		GO ID: GO:0010037	GO biological process: response to carbon dioxide
+		GO ID: GO:0009409	GO biological process: response to cold
+	KEGG pathways
+		KEGG ID: ath00910	KEGG Pathway: Nitrogen metabolism
+		KEGG ID: ath01100	KEGG Pathway: Metabolic pathways
+
+
 
 The global KEGG pathways the genes in this network are involved in are:
 KEGG ID: ath00710 with the pathway: Carbon fixation in photosynthetic organisms
@@ -130,7 +461,11 @@ KEGG ID: ath01230 with the pathway: Biosynthesis of amino acids
 KEGG ID: ath00195 with the pathway: Photosynthesis
 
 The Biological processes the genes in this network participate in are:
+GO ID: GO:0042742 with the biological process: defense response to bacterium
 GO ID: GO:0010150 with the biological process: leaf senescence
+GO ID: GO:0009409 with the biological process: response to cold
+GO ID: GO:0009753 with the biological process: response to jasmonic acid
+GO ID: GO:0009416 with the biological process: response to light stimulus
 GO ID: GO:0050832 with the biological process: defense response to fungus
 GO ID: GO:0010286 with the biological process: heat acclimation
 GO ID: GO:0051259 with the biological process: protein complex oligomerization
@@ -138,15 +473,37 @@ GO ID: GO:0006457 with the biological process: protein folding
 GO ID: GO:0009408 with the biological process: response to heat
 GO ID: GO:0010188 with the biological process: response to microbial phytotoxin
 GO ID: GO:0016051 with the biological process: carbohydrate biosynthetic process
+GO ID: GO:0030388 with the biological process: fructose 1,6-bisphosphate metabolic process
+GO ID: GO:0006002 with the biological process: fructose 6-phosphate metabolic process
+GO ID: GO:0006000 with the biological process: fructose metabolic process
+GO ID: GO:0006094 with the biological process: gluconeogenesis
+GO ID: GO:0019253 with the biological process: reductive pentose-phosphate cycle
 GO ID: GO:0019252 with the biological process: starch biosynthetic process
 GO ID: GO:0005986 with the biological process: sucrose biosynthetic process
+GO ID: GO:0005975 with the biological process: carbohydrate metabolic process
+GO ID: GO:0071454 with the biological process: cellular response to anoxia
+GO ID: GO:0070417 with the biological process: cellular response to cold
+GO ID: GO:0034605 with the biological process: cellular response to heat
 GO ID: GO:0080153 with the biological process: negative regulation of reductive pentose-phosphate cycle
+GO ID: GO:0018316 with the biological process: peptide cross-linking via L-cystine
 GO ID: GO:0065003 with the biological process: protein-containing complex assembly
+GO ID: GO:0009744 with the biological process: response to sucrose
+GO ID: GO:0007568 with the biological process: aging
+GO ID: GO:0019676 with the biological process: ammonia assimilation cycle
+GO ID: GO:0006542 with the biological process: glutamine biosynthetic process
+GO ID: GO:0046686 with the biological process: response to cadmium ion
+GO ID: GO:0006807 with the biological process: nitrogen compound metabolic process
 GO ID: GO:0010205 with the biological process: photoinhibition
+GO ID: GO:0019684 with the biological process: photosynthesis, light reaction
 GO ID: GO:0010207 with the biological process: photosystem II assembly
 GO ID: GO:0042549 with the biological process: photosystem II stabilization
 GO ID: GO:0035304 with the biological process: regulation of protein dephosphorylation
+GO ID: GO:0015976 with the biological process: carbon utilization
+GO ID: GO:0006865 with the biological process: amino acid transport
+GO ID: GO:2000122 with the biological process: negative regulation of stomatal complex development
 GO ID: GO:0015979 with the biological process: photosynthesis
+GO ID: GO:0010119 with the biological process: regulation of stomatal movement
+GO ID: GO:0010037 with the biological process: response to carbon dioxide
 
 The interaction of genes in the network is:
 Gene ID (D): AT2G39730 interacts with Gene ID (I): AT5G42980
@@ -162,17 +519,77 @@ There are 1 Genes that are NOT on the gene list: AT5G42980
 --------------------------------------------------
 Network 4
 The network has 3 genes:
-AT4G37610 AT1G26830 AT3G48360
+AT4G37610
+	GO terms
+		GO ID: GO:0016567	GO biological process: protein ubiquitination
+		GO ID: GO:0006355	GO biological process: regulation of transcription, DNA-templated
+		GO ID: GO:0009733	GO biological process: response to auxin
+		GO ID: GO:0010200	GO biological process: response to chitin
+		GO ID: GO:0009409	GO biological process: response to cold
+		GO ID: GO:0042542	GO biological process: response to hydrogen peroxide
+		GO ID: GO:0009751	GO biological process: response to salicylic acid
+	No KEGG pathways
+
+AT1G26830
+	GO terms
+		GO ID: GO:0009911	GO biological process: positive regulation of flower development
+		GO ID: GO:0016567	GO biological process: protein ubiquitination
+		GO ID: GO:0009639	GO biological process: response to red or far red light
+		GO ID: GO:0006511	GO biological process: ubiquitin-dependent protein catabolic process
+		GO ID: GO:0006355	GO biological process: regulation of transcription, DNA-templated
+	KEGG pathways
+		KEGG ID: ath04120	KEGG Pathway: Ubiquitin mediated proteolysis
+
+AT3G48360
+	GO terms
+		GO ID: GO:0009738	GO biological process: abscisic acid-activated signaling pathway
+		GO ID: GO:0009734	GO biological process: auxin-activated signaling pathway
+		GO ID: GO:0007623	GO biological process: circadian rhythm
+		GO ID: GO:0051973	GO biological process: positive regulation of telomerase activity
+		GO ID: GO:0016567	GO biological process: protein ubiquitination
+		GO ID: GO:0006355	GO biological process: regulation of transcription, DNA-templated
+		GO ID: GO:0009737	GO biological process: response to abscisic acid
+		GO ID: GO:0009733	GO biological process: response to auxin
+		GO ID: GO:0009743	GO biological process: response to carbohydrate
+		GO ID: GO:0009409	GO biological process: response to cold
+		GO ID: GO:0042542	GO biological process: response to hydrogen peroxide
+		GO ID: GO:0009753	GO biological process: response to jasmonic acid
+		GO ID: GO:0010167	GO biological process: response to nitrate
+		GO ID: GO:0009751	GO biological process: response to salicylic acid
+		GO ID: GO:0009651	GO biological process: response to salt stress
+		GO ID: GO:0009611	GO biological process: response to wounding
+		GO ID: GO:0010182	GO biological process: sugar mediated signaling pathway
+		GO ID: GO:0006857	GO biological process: oligopeptide transport
+	No KEGG pathways
+
+
 
 The global KEGG pathways the genes in this network are involved in are:
 KEGG ID: ath04120 with the pathway: Ubiquitin mediated proteolysis
 
 The Biological processes the genes in this network participate in are:
+GO ID: GO:0016567 with the biological process: protein ubiquitination
+GO ID: GO:0006355 with the biological process: regulation of transcription, DNA-templated
+GO ID: GO:0009733 with the biological process: response to auxin
+GO ID: GO:0010200 with the biological process: response to chitin
+GO ID: GO:0009409 with the biological process: response to cold
+GO ID: GO:0042542 with the biological process: response to hydrogen peroxide
+GO ID: GO:0009751 with the biological process: response to salicylic acid
 GO ID: GO:0009911 with the biological process: positive regulation of flower development
 GO ID: GO:0009639 with the biological process: response to red or far red light
+GO ID: GO:0006511 with the biological process: ubiquitin-dependent protein catabolic process
 GO ID: GO:0009738 with the biological process: abscisic acid-activated signaling pathway
 GO ID: GO:0009734 with the biological process: auxin-activated signaling pathway
+GO ID: GO:0007623 with the biological process: circadian rhythm
+GO ID: GO:0051973 with the biological process: positive regulation of telomerase activity
+GO ID: GO:0009737 with the biological process: response to abscisic acid
+GO ID: GO:0009743 with the biological process: response to carbohydrate
+GO ID: GO:0009753 with the biological process: response to jasmonic acid
+GO ID: GO:0010167 with the biological process: response to nitrate
+GO ID: GO:0009651 with the biological process: response to salt stress
+GO ID: GO:0009611 with the biological process: response to wounding
 GO ID: GO:0010182 with the biological process: sugar mediated signaling pathway
+GO ID: GO:0006857 with the biological process: oligopeptide transport
 
 The interaction of genes in the network is:
 Gene ID (D): AT4G37610 interacts with Gene ID (I): AT1G26830

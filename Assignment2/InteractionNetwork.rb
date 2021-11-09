@@ -39,7 +39,6 @@ class InteractionNetwork
 		@all_genes.each_key do |locus_tag|
 			create_all_networks_recursive(locus_tag, locus_tag) # Create network for each AGI locus ID with a depth of 3
 		end
-
 		annotate_networks # Annotate all genes in the networks with KEGG and GO terms
 		# Separate individal networks to a list
 		@network_list = Array.new
@@ -138,7 +137,6 @@ class InteractionNetwork
 			file.write("The interactions where filtered by the taxonomy ID of arabidopsis and the quality value of the interaction.\n")
 			file.write("I decided to consider interactions with quality values >= 0.4.\n")
 			file.write("Each network is annotated by the  KEGG pathways and GO terms associated with biological process of the genes of each network.\n")
-			file.write("The GO terms are filtered by evidence: IDA(Inferred from Direct Assay), IMP(Inferred from Mutant Phenotype) and IPI(Inferred from Physical Interaction).\n")
 			file.write("The following report is a summary of each network and the annotation of the genes in that network.\n")
 			file.write("Keywords:\n")
 			file.write("\tI: Indirect gene that interacts (not found on the gene list).\n")
@@ -146,37 +144,54 @@ class InteractionNetwork
 			total_direct_genes = Array.new # Keep track of all genes that interact that are on the gene_list
 			# Go through each network
 			@network_list.each do |network|
+				# Start body of the report
 				file.write("-"*50)
 				file.write("\n")
 				file.write("Network #{net_count}\n")
 				file.write("The network has #{network.vertices.length} genes:\n")
 				# Write all the genes in the network with their individual annotations
-				# network.vertices.each do |gene|
-				# 	file.write("#{gene}\t")
-				# 	Gene.all_genes[gene].go.empty ? go_string = "No GO ID\t" : go_string = "GO ID: #{Gene.all_genes[gene].go.keys}\t"
-				# 	file.write(go_string)
-				# 	Gene.all_genes[gene].kegg.empty ? kegg_string = "No KEGG ID\t" : kegg_string = "KEGG ID: #{Gene.all_genes[gene].kegg.keys}\t"
-				# 	file.write(kegg_string)
-				# end
-				file.write(network.vertices.join(" "))
+				# GO ANNOTATIONS
+				network.vertices.each do |gene|
+					file.write("#{gene}\n")
+					# Find the GO ID and terms
+					if gene.go.empty?
+						go_string = "\tNo GO terms\n"
+					else # Case where there is a GO ID
+						go_string = "\tGO terms\n"
+						# Annotate all GO TERMS
+						gene.go.each {|id, go_term| go_string += "\t\tGO ID: #{id}\tGO biological process: #{go_term}\n"}
+					end
+					file.write(go_string) # Write to report
+
+					# KEGG ANNOTATIONS
+					if gene.kegg.empty?
+						kegg_string = "\tNo KEGG pathways\n"
+					else # Case where there is a GO ID
+						kegg_string = "\tKEGG pathways\n"
+						# Annotate all KEGG PATHWAYS
+						gene.kegg.each {|id, kegg_term| kegg_string += "\t\tKEGG ID: #{id}\tKEGG Pathway: #{kegg_term}\n"}
+					end
+					file.write(kegg_string) # Write to report
+					file.write("\n")
+				end
 				file.write("\n")
 				file.write("\n")
-				# KEGG info
+				# KEGG info of all the network (without duplicates)
+				kegg_hash = network_kegg(network) 
 				file.write("The global KEGG pathways the genes in this network are involved in are:\n")
-				kegg_hash = network_kegg(network)
 				kegg_hash.each do |kegg_id, pathway|
 					file.write("KEGG ID: #{kegg_id} with the pathway: #{pathway}\n")
 				end
-				# GO info
+				# GO info of all the network (without duplicates)
+				go_hash = network_go(network)
 				file.write("\n")
 				file.write("The Biological processes the genes in this network participate in are:\n")
-				go_hash = network_go(network)
 				go_hash.each do |go_id, go_term|
 					file.write("GO ID: #{go_id} with the biological process: #{go_term}\n")
 				end
 				
 				file.write("\n")
-				# Interaction info
+				# Interaction info 
 				file.write("The interaction of genes in the network is:\n")
 
 				indirect_genes = Array.new # Keep track of genes that interact but are NOT on list

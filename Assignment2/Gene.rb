@@ -28,7 +28,7 @@ class Gene
 	# @return [Hash<String, String>] The KEGG annotations. The key is the ID and the value is the pathway.
 	attr_accessor :kegg # Hash
 
-	# Class Variable that is a Hash that contains all the genes that are created
+	# Hash that contains all the genes that are created (Class variable)
 	# @!attribute [r] all_genes
 	# @return [Hash<String, Gene>] A Hash of all the genes created. The key is the Gene ID (AGI Locus Codes) and the value is the Gene Object.
 	@@all_genes = Hash.new
@@ -40,8 +40,20 @@ class Gene
 	# @param kegg [Hash<String, String>] The KEGG annotations. The key is the ID and the value is the pathway.
 	# @return [Gene] an instance of Gene
 	def initialize(params = {})
-		@id = params.fetch(:id, nil)
-		@id = @id.upcase
+
+		#Validate ID
+		gene_id_code = params.fetch(:id, nil)
+		# Regex expression of the Gene ID
+		gene_id_regex = Regexp.new(/A[Tt]\d[Gg]\d\d\d\d\d/)
+		# Only match codes that follow the regex and have the same lenth as a Gene ID
+		unless gene_id_regex.match(gene_id_code) and (gene_id_code.length == 9)
+			puts "The Gene ID #{gene_id_code} is not valid"
+			@id = nil
+		else
+			@id = gene_id_code
+			@id = @id.upcase
+		end
+
 		@go = Hash.new
 		@kegg = Hash.new
 		@@all_genes[@id] = self
@@ -50,7 +62,7 @@ class Gene
 	# Class Method to get all the created Gene objects.
 	#
 	# @return [Hash<String, Gene>] the class variable all_genes.
-	def self.all_genes
+	def Gene.all_genes
 		return @@all_genes
 	end
 
@@ -91,10 +103,9 @@ class Gene
 				# Search the GO terms in the reference data of the Gene
 				go_data["GO"].each do |annotation|
 
-					# Filter by experimental evidence. IDA(Direct Assay), IMP (Mutual phenotype), IPI (Inferred protein interaction)
-					# Filter by Biological Process.
-					next unless (annotation[2].match(/^IDA\:/) or annotation[2].match(/^IMP\:/) or annotation[2].match(/^IPI\:/)) and annotation[1].match(/^P\:(.*)/)
-					
+					# Filter GO terms by Biological Process.
+					# next unless (annotation[2].match(/^IDA\:/) or annotation[2].match(/^IMP\:/) or annotation[2].match(/^IPI\:/)) and annotation[1].match(/^P\:(.*)/)
+					next unless annotation[1].match(/^P\:(.*)/)
 					# Assign the biological proccess (value) to the GO ID (key)
 					go_hash[annotation[0]] = $1.to_s
 				end
