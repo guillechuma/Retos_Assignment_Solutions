@@ -1,5 +1,9 @@
 require './InteractionNetwork.rb'
 
+###
+# Main program of the Interaction Network solution
+###
+
 # Command line arguments (should be two)
 input_array = ARGV
 
