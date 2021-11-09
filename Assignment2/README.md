@@ -11,5 +11,6 @@ To run the program you need to clone this repository and use the command line. T
 ruby main.rb ArabidopsisSubNetwork_GeneList.txt NetworksReport.txt
 ```
 
-For a visual output of the network see the file [interaction_networks.png](./interaction_networks.png)
+For a visual output of the network see the file [interaction_networks.png](./interaction_networks.png).
+
 The output of the command line program is in the file NetworksReport.txt
