@@ -22,7 +22,7 @@ if input_array.empty? or (input_array.length != 4) then
 	$GENE_FILE = 'ArabidopsisSubNetwork_GeneList.txt'
     $REPORT_FILE = 'genes_not_repeats.txt'
     $GFF3_FILE = 'repeats.gff3'
-    $CHR_GFF3_FILE = 'crh_repeats.gff3'
+    $CHR_GFF3_FILE = 'chr_repeats.gff3'
 else
 	# Case where there are command line arguments
 	$GENE_FILE = input_array[0]
@@ -40,7 +40,7 @@ genes.readlines.each do |gene_id|
 end
 
 # Write report of genes on the list that do no have exons with CTTCTT repeat
-File.open('genes_not_repeats.txt','w') do |file|
+File.open($REPORT_FILE,'w') do |file|
     file.write("This report contains the genes on the list that do no have exons with CTTCTT repeat\n\n")
     Gene.all_genes.each_value do |gene|
         file.write(gene.write_report)
@@ -53,7 +53,7 @@ end
 # 
 # @return [String] The gff3 file.
 def write_gff3
-    File.open('repeats.gff3','w') do |file|
+    File.open($GFF3_FILE,'w') do |file|
         file.write("##gff-version 3\n")
         Gene.all_genes.each do |gene_id, gene|
             gene.sequence.features.each do |feature|
@@ -80,7 +80,7 @@ write_gff3
 # Using the coordinates of the chromosome. It can be added to an ENSEMBL track.
 # @return [String] The gff3 file with chromosome coordinates.
 def write_chr_gff3
-    File.open('crh_repeats.gff3','w') do |file|
+    File.open($CHR_GFF3_FILE,'w') do |file|
         file.write("##gff-version 3\n")
         Gene.all_genes.each do |gene_id, gene|
             # SEACH FOR GENE POSITION IN CHROMOSOME
