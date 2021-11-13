@@ -87,9 +87,9 @@ class Gene
 	end
 
 	# Auxiliary method to use the EMBL-EBI dbfetch API to retrieve EMBL record of Gene
-    #
+	#
 	# @param id [String] The AGI locus code to search the API 
-    # @return [Bio::FlatFile] flat embl record located in ./embl_records
+	# @return [Bio::FlatFile] flat embl record located in ./embl_records
 	def fetch_embl(id)
 		address = "http://www.ebi.ac.uk/Tools/dbfetch/dbfetch?db=ensemblgenomesgene&format=embl&id=#{id}"
 		response = fetch(address)
@@ -99,10 +99,10 @@ class Gene
 			file.puts record
 		end
 	end
-
+	
 	# Auxiliary method to read the EMBL file located in ./embl_records and load it as a Bio::FlatFile object
-    #
-    # @return [Bio::FlatFile] EMBL record of ID
+	#
+	# @return [Bio::FlatFile] EMBL record of ID
 	def read_embl(id)
 		filename = "./embl_records/#{id}.embl"
 		return Bio::FlatFile.auto(filename)
@@ -111,8 +111,8 @@ class Gene
 	# Extract the exon features from the EMBL record and record them into the @features instance variable.
 	# The associated value with key "Note" contains the exon number. That information is used as the key to the 
 	# exon Hash.
-    #
-    # @return [Hash<String, Bio::Feature] a hash of exons as features.
+	#
+	# @return [Hash<String, Bio::Feature] a hash of exons as features.
 	def get_exons_features
 
 		exon_hash = Hash.new
@@ -140,10 +140,10 @@ class Gene
 	# This method has been abstracted so that you can search and annotate any feature
 	# and give it your name. By default it searches for the repeat cttctt and names it repeat,
 	# but it works for any valid sequence of interest.
-    #
+	#
 	# @param feature_name [String] The name of the feature that represents the sequence to search for
 	# @param sequence [String] The sequence you want to search inside the exons and annotate.
-    # @return [Array<Bio::Feature>] append found features to the Bio::Sequence object of the Gene.
+	# @return [Array<Bio::Feature>] append found features to the Bio::Sequence object of the Gene.
 	def search_annotate_sequence(feature_name = 'repeat', sequence = 'cttctt')
 		# Convert the sequence query String to a Bio::Sequence::NA object
 		sequence = Bio::Sequence::NA.new(sequence)
@@ -191,8 +191,8 @@ class Gene
 	end
 
 	# Report showing which exons do not have the CTTCTT repeat.
-    #
-    # @return [String] a report of the exons without the CTTCTT repeat.
+	#
+	# @return [String] a report of the exons without the CTTCTT repeat.
 	def write_report
 		repeats_array = Array.new # Create an array of repeat features
 		# Go through all the features of the sequence gene
@@ -203,7 +203,7 @@ class Gene
 		end
 		# Remove duplicates (an exon can have many repeats)	
 		repeats_array = repeats_array.uniq
-		
+
 		report_string = String.new # This will be the return value
 		# Find those exons that do not have repeats  
 		exons_not_repeat = @features["exons"].keys - repeats_array.uniq
