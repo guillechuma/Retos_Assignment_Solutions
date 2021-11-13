@@ -1,20 +1,20 @@
 require 'bio'
-require 'rest-client'   # this is how you access the Web
+require 'rest-client'
 # == Gene
 #
-# This is a representation of a Gene
-# that can interact with other genes.
+# This is a representation of a Gene 
+# that has features and annotations.
 #
 # == Summary
 # 
 # It has a unique ID identifier, represented by Arabidopsis AGI code,
-# and also functional annotation from KEGG and GO databases about it.
-# All the data was extracted Using TOGO and the IntAct databases.
+# and also functional annotation from EMBL records.
+# All the data was extracted Using EMBL-EBI dbfetch REST API
 class Gene
 
-	# Get/Set the Gene ID AGI Locus Codes
+	# Get/Set the Gene ID AGI Code
 	# @!attribute [rw] id
-	# @return [String] The Gene ID AGI Locus Codes
+	# @return [String] The Gene ID AGI Locus Code
 	attr_accessor :id # Unique locus tag ID
 
 	# Get/Set the EMBL record of the Gene ID
@@ -39,50 +39,56 @@ class Gene
 
 	# Create a new instance of Gene object
 	# 
-	# @param id [String] The ID: AGI Locus Codes, normalized to upcase
-	# @param go [Hash<String, String>] The GO annotations. The key is the ID and the value is the description of the term.
-	# @param kegg [Hash<String, String>] The KEGG annotations. The key is the ID and the value is the pathway.
-	# @return [Gene] an instance of Gene
+	# @param :id [String] The ID: AGI Locus Codes, normalized to upcase letters. IT checks if code is correctly formated.
+	# @return [Gene] an instance of Gene.
 	def initialize(params = {})
 
-		#Validate ID
+		# Fetch the :id from parameters
 		gene_id_code = params.fetch(:id, nil)
+		#Validate ID
 		# Regex expression of the Gene ID
 		gene_id_regex = Regexp.new(/A[Tt]\d[Gg]\d\d\d\d\d/)
 		# Only match codes that follow the regex and have the same lenth as a Gene ID
 		unless gene_id_regex.match(gene_id_code) and (gene_id_code.length == 9)
-			puts "The Gene ID #{gene_id_code} is not valid"
+			puts "The Gene ID #{gene_id_code} is not valid" # Print error message
 			@id = nil
 		else
-			@id = gene_id_code
-			@id = @id.upcase
+			@id = gene_id_code # Assign code to instance variable id
+			@id = @id.upcase # Normalize to uppercase letters
 		end
 
-		# Create an EMBL file if it does not exists
+		# Create an EMBL file of the gene if it does not exists.
+		# It is stored in the folder ./embl_records/
 		filename = "./embl_records/#{@id}.embl"
-		fetch_embl(@id) unless File.file?(filename)
+		fetch_embl(@id) unless File.file?(filename) # Auxiliary method to fetch the EMBL file
 
-		# Read embl file (Be carefull with next_entry)
-		# TODO: Check assumption that each file has only one record
-		@embl = read_embl(@id).next_entry
+		# Read EMBL file
+		# IMPORTANT 
+		# I Make the assumption that each file has only one record, since each AGI locus code represents one gene only.
+		@embl = read_embl(@id).next_entry # class BIO::EMBL
 
+		# Convert the BIO::EMBL object to Bio::Sequence to include annotations
 		# Create a sequence object to annotate it!
-		@sequence = @embl.to_biosequence
+		@sequence = @embl.to_biosequence 
 
-		# @TODO: General feature HASH
+		# Hash that has for keys the feature type (in this case the only key is "exon")
+		# The values are a hash of features.
 		@features = Hash.new
 
-		# Annotate exon features
+		# Annotate exon features 
+		# get_exons_features is an auxiliary method to extract exon features (see method)
 		@features["exons"] = get_exons_features
 
-		# Annotate sequence
+		# Search for CTTCTT repeats and annotate the sequence
 		search_annotate_sequence
 
+		# Add the Gene created to the list of Genes
 		@@all_genes[@id] = self
 	end
 
-	#
+	# Auxiliary method to use the EMBL-EBI dbfetch API to retrieve EMBL record of Gene
     #
+	# @param id [String] The AGI locus code to search the API 
     # @return [Bio::FlatFile] flat embl record located in ./embl_records
 	def fetch_embl(id)
 		address = "http://www.ebi.ac.uk/Tools/dbfetch/dbfetch?db=ensemblgenomesgene&format=embl&id=#{id}"
@@ -94,58 +100,87 @@ class Gene
 		end
 	end
 
-	#
+	# Auxiliary method to read the EMBL file located in ./embl_records and load it as a Bio::FlatFile object
     #
-    # @return [Bio::FlatFile] emlb record of ID
+    # @return [Bio::FlatFile] EMBL record of ID
 	def read_embl(id)
 		filename = "./embl_records/#{id}.embl"
 		return Bio::FlatFile.auto(filename)
 	end
 
+	# Extract the exon features from the EMBL record and record them into the @features instance variable.
+	# The associated value with key "Note" contains the exon number. That information is used as the key to the 
+	# exon Hash.
+    #
+    # @return [Hash<String, Bio::Feature] a hash of exons as features.
 	def get_exons_features
 
-		# entry =  @embl.next_entry; # OJO: Assume each file has one entry
-		# iterates over each element in 'features' # features method finds all features
 		exon_hash = Hash.new
 
+		# iterates over each element in 'features' # features method finds all features
 		@embl.features.each do |feature|
-			# FILTER EXONS
+			# FILTER EXON FEATURES
 			next unless feature.feature == "exon"
-			# position = feature.position # Look at Bio::Feature object
-			
-			qual = feature.assoc 
 
-			exon_id_regex = Regexp.new(/exon_id=(#{@id}.*)/i)
+			qual = feature.assoc # Extract associated values of feature
 
+			exon_id_regex = Regexp.new(/exon_id=(#{@id}.*)/i) # The regex to find the exon_id in notes
+
+			# Search for exon number and ID
 			if exon_id_regex.match(qual["note"])
-				exon_hash[$1] = feature
+				exon_hash[$1] = feature # Use the exon number as key and the exon feature as value
 			end
 		end
 		return exon_hash
 	end
 
-	# Find sequence pattern (CTTCTT)
+	# Search for specific sequences inside the exons of the Gene and annotate them as Bio::Features. 
+	# This annotation is strand-aware (It annotates sequence in forward and reverse strand).
+	# Also, the method is aware of the possibility of overlapping of sequences and detects them correctly.
+	# This method has been abstracted so that you can search and annotate any feature
+	# and give it your name. By default it searches for the repeat cttctt and names it repeat,
+	# but it works for any valid sequence of interest.
+    #
+	# @param feature_name [String] The name of the feature that represents the sequence to search for
+	# @param sequence [String] The sequence you want to search inside the exons and annotate.
+    # @return [Array<Bio::Feature>] append found features to the Bio::Sequence object of the Gene.
 	def search_annotate_sequence(feature_name = 'repeat', sequence = 'cttctt')
+		# Convert the sequence query String to a Bio::Sequence::NA object
 		sequence = Bio::Sequence::NA.new(sequence)
+		# Create a regex for the sequence.
+		# IMPORTANT: the term (?=) means positive lookahead. It searches for the sequence
+		# before it reaches the string. This way it is aware of overlapping sequences.
+		# eg. CTTCTTCTT In this case there are two instances of CTTCTT.
 		sequence_regex = Regexp.new(/(?=#{sequence})/i)
+		# Create the same regex for the reverse complement of the sequence
+		# This searches for the pattern in the reverse strand
 		reverse_sequence_regex = Regexp.new(/(?=#{sequence.complement})/i)
+
+		# Iterate over each exon of the Gene
 		@features['exons'].each do |exon_id, exon|
-			sequence = @sequence.splicing(exon.position)
-			matches = sequence.to_enum(:scan, sequence_regex).map {Regexp.last_match}
+			# Retrieve the sequence of the exon
+			seq = @sequence.splicing(exon.position)
+			# Get all matches of sequence in the string.
+			# This line of code was adapted from StackOverflow.
+			matches = seq.to_enum(:scan, sequence_regex).map {Regexp.last_match}
 			# TO adjust positions relative to sequence!!
+			# Get starting and ending positions of the exon.
+			# Put coordinates relative to the Gene sequence, not the exon.	
 			from, to = exon.locations.span
-			if matches
-				matches.each do |match|
+			if matches # If there is a match
+				matches.each do |match| # Go trough each match
+					# Set the forward position relative to the gene
 					position = "#{match.offset(0)[0] + 1 + from - 1}..#{match.offset(0)[0] + from - 1 + 6}"
-					repeat_ft = Bio::Feature::new(feature_name , position)
-            		repeat_ft.append(Bio::Feature::Qualifier.new('note', exon_id))
-					@sequence.features << repeat_ft
+					repeat_ft = Bio::Feature::new(feature_name, position) # Create new feature object
+            		repeat_ft.append(Bio::Feature::Qualifier.new('note', exon_id)) #Append the exon id as a Qualifier of the feature
+					@sequence.features << repeat_ft # Append the new feature to the features of the sequence of the Gene.
 				end
 			end
-
-			rev_matches = sequence.to_enum(:scan, reverse_sequence_regex).map {Regexp.last_match}
+			# Same procedure as before but with the reverse complement as regex.
+			rev_matches = seq.to_enum(:scan, reverse_sequence_regex).map {Regexp.last_match}
 			if rev_matches
 				rev_matches.each do |match|
+					# Note that the position is specified that it is on the reverse strand.
 					position = "complement(#{match.offset(0)[0] + 1 + from - 1}..#{match.offset(0)[0] + from - 1 + 6})"
 					rev_repeat_ft = Bio::Feature::new(feature_name , position)
 					rev_repeat_ft.append(Bio::Feature::Qualifier.new('note', exon_id))
@@ -155,41 +190,30 @@ class Gene
 		end
 	end
 
-	def write_gff3
-		File.open('test_repeats.gff3','w') do |file|
-			file.write("##gff-version 3\n")
-			@sequence.features.each do |feature|
-				next unless feature.feature == 'repeat'
-				Regexp.new(/complement/i).match(feature.position) ? strand = "-" : strand = "+"
-				from, to = feature.locations.span
-				exon_id = feature.assoc['note']
-				file.write("#{@id}\tGene.rb\trepeat_unit\t#{from}\t#{to}\t.\t#{strand}\t.\texon_id=#{exon_id}\n")
-			end
-			# Write FASTA
-			file.write("##FASTA\n")
-		end
-	end
-
+	# Report showing which exons do not have the CTTCTT repeat.
+    #
+    # @return [String] a report of the exons without the CTTCTT repeat.
 	def write_report
-		repeats_array = Array.new
+		repeats_array = Array.new # Create an array of repeat features
+		# Go through all the features of the sequence gene
 		@sequence.features.each do |feature|
+			# Only use repeat features
 			next unless feature.feature == 'repeat'
-			repeats_array << feature.assoc['note']
-			# next if gene.features['exons'].key?(idx)
-			# puts gene.features['exons'][idx]
+			repeats_array << feature.assoc['note'] # Append that repeat to the array
 		end
+		# Remove duplicates (an exon can have many repeats)	
 		repeats_array = repeats_array.uniq
-
-		report_string = String.new
+		
+		report_string = String.new # This will be the return value
+		# Find those exons that do not have repeats  
 		exons_not_repeat = @features["exons"].keys - repeats_array.uniq
+		# If exons_not_repeat empty, all exons have repeat
 		unless exons_not_repeat.empty?
+			# Gene ID as header	
 			report_string += "Gene ID: #{@id}\n"
 			report_string += exons_not_repeat.join("\n")
 			report_string += "\n\n"
 		end
-		# exons_not_repeat.each do |not_exon|
-		# 	puts not_exon
-		# end
 		return report_string
 	end
 
@@ -214,20 +238,12 @@ class Gene
 	def to_s
 		return @id
 	end
-
-    #
-    #
-    # @return [Bio::FlatFile] 
-    def read_file(filename)
-        return Bio::FlatFile.auto(filename)
-    end
-
-    def get_features(feature)
-
-    end 
-
 end
 
+# Auxiliary function to fetch a URL correctly.
+# 
+# @param url [String] The URL to search.
+# @return [String] The response for the URL.
 def fetch(url, headers = {accept: "*/*"}, user = "", pass="")
 	response = RestClient::Request.execute({
 	  method: :get,

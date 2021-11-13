@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: Gene
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Gene";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (G)</a> &raquo;
+    
+    
+    <span class="title">Gene</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Class: Gene
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Gene</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
+
+  
+  
+  
+  
+  
+
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>Gene.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    
+<p>All the data was extracted Using EMBL-EBI dbfetch REST API</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="all_genes-classvariable" class="">@@all_genes =
+          <div class="docstring">
+  <div class="discussion">
+    
+<p>Hash that contains all the genes that are created (Class variable)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash&lt;String, <span class='object_link'><a href="" title="Gene (class)">Gene</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Hash of all the genes created. The key is the Gene ID (AGI Locus Codes) and the value is the Gene Object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div>
+        </dt>
+        <dd><pre class="code"><span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+  <h2>Instance Attribute Summary <small><a href="#" class="summary_toggle">collapse</a></small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#all_genes-instance_method" title="#all_genes (instance method)">#<strong>all_genes</strong>  &#x21d2; Hash&lt;String, Gene&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+      <span class="note title readonly">readonly</span>
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Hash that contains all the genes that are created (Class variable).</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#embl-instance_method" title="#embl (instance method)">#<strong>embl</strong>  &#x21d2; Bio::EMBL </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get/Set the EMBL record of the Gene ID.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#features-instance_method" title="#features (instance method)">#<strong>features</strong>  &#x21d2; Hash&lt;String, Hash&lt;String, Bio::Feature&gt;&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get/Set the Features of the Gene ID.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#id-instance_method" title="#id (instance method)">#<strong>id</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get/Set the Gene ID AGI Code.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#sequence-instance_method" title="#sequence (instance method)">#<strong>sequence</strong>  &#x21d2; Bio::Sequence </a>
+    
+
+    
+  </span>
+  
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Get/Set the Sequence of the Gene ID.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#all_genes-class_method" title="all_genes (class method)">.<strong>all_genes</strong>  &#x21d2; Hash&lt;String, Gene&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Class Method to get all the created Gene objects.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#==-instance_method" title="#== (instance method)">#<strong>==</strong>(other)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Overwrite the == method to compare genes by AGI Locus Codes (ID).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#fetch_embl-instance_method" title="#fetch_embl (instance method)">#<strong>fetch_embl</strong>(id)  &#x21d2; Bio::FlatFile </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Flat embl record located in ./embl_records.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_exons_features-instance_method" title="#get_exons_features (instance method)">#<strong>get_exons_features</strong>  &#x21d2; Hash&lt;String, Bio::Feature] a hash of exons as features. </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Hash&lt;String, Bio::Feature] a hash of exons as features.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">#<strong>initialize</strong>(params = {})  &#x21d2; Gene </a>
+    
+
+    
+  </span>
+  
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Create a new instance of Gene object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#read_embl-instance_method" title="#read_embl (instance method)">#<strong>read_embl</strong>(id)  &#x21d2; Bio::FlatFile </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>EMBL record of ID.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#search_annotate_sequence-instance_method" title="#search_annotate_sequence (instance method)">#<strong>search_annotate_sequence</strong>(feature_name = &#39;repeat&#39;, sequence = &#39;cttctt&#39;)  &#x21d2; Array&lt;Bio::Feature&gt; </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Append found features to the Bio::Sequence object of the Gene.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">#<strong>to_s</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Overwrite the to_s method to print genes by AGI Locus Codes (ID).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#write_report-instance_method" title="#write_report (instance method)">#<strong>write_report</strong>  &#x21d2; String </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>A report of the exons without the CTTCTT repeat.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <h3 class="signature first" id="initialize-instance_method">
+  
+    #<strong>initialize</strong>(params = {})  &#x21d2; <tt><span class='object_link'><a href="" title="Gene (class)">Gene</a></span></tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Create a new instance of Gene object</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>:id</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The ID: AGI Locus Codes, normalized to upcase letters. IT checks if code is correctly formated.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+
+	<span class='comment'># Fetch the :id from parameters
+</span>	<span class='id identifier rubyid_gene_id_code'>gene_id_code</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='period'>.</span><span class='id identifier rubyid_fetch'>fetch</span><span class='lparen'>(</span><span class='symbol'>:id</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+	<span class='comment'>#Validate ID
+</span>	<span class='comment'># Regex expression of the Gene ID
+</span>	<span class='id identifier rubyid_gene_id_regex'>gene_id_regex</span> <span class='op'>=</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>A[Tt]\d[Gg]\d\d\d\d\d</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span>
+	<span class='comment'># Only match codes that follow the regex and have the same lenth as a Gene ID
+</span>	<span class='kw'>unless</span> <span class='id identifier rubyid_gene_id_regex'>gene_id_regex</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_gene_id_code'>gene_id_code</span><span class='rparen'>)</span> <span class='kw'>and</span> <span class='lparen'>(</span><span class='id identifier rubyid_gene_id_code'>gene_id_code</span><span class='period'>.</span><span class='id identifier rubyid_length'>length</span> <span class='op'>==</span> <span class='int'>9</span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>The Gene ID </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_gene_id_code'>gene_id_code</span><span class='embexpr_end'>}</span><span class='tstring_content'> is not valid</span><span class='tstring_end'>&quot;</span></span> <span class='comment'># Print error message
+</span>		<span class='ivar'>@id</span> <span class='op'>=</span> <span class='kw'>nil</span>
+	<span class='kw'>else</span>
+		<span class='ivar'>@id</span> <span class='op'>=</span> <span class='id identifier rubyid_gene_id_code'>gene_id_code</span> <span class='comment'># Assign code to instance variable id
+</span>		<span class='ivar'>@id</span> <span class='op'>=</span> <span class='ivar'>@id</span><span class='period'>.</span><span class='id identifier rubyid_upcase'>upcase</span> <span class='comment'># Normalize to uppercase letters
+</span>	<span class='kw'>end</span>
+
+	<span class='comment'># Create an EMBL file of the gene if it does not exists.
+</span>	<span class='comment'># It is stored in the folder ./embl_records/
+</span>	<span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./embl_records/</span><span class='embexpr_beg'>#{</span><span class='ivar'>@id</span><span class='embexpr_end'>}</span><span class='tstring_content'>.embl</span><span class='tstring_end'>&quot;</span></span>
+	<span class='id identifier rubyid_fetch_embl'>fetch_embl</span><span class='lparen'>(</span><span class='ivar'>@id</span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_file?'>file?</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='rparen'>)</span> <span class='comment'># Auxiliary method to fetch the EMBL file
+</span>
+	<span class='comment'># Read EMBL file
+</span>	<span class='comment'># IMPORTANT 
+</span>	<span class='comment'># I Make the assumption that each file has only one record, since each AGI locus code represents one gene only.
+</span>	<span class='ivar'>@embl</span> <span class='op'>=</span> <span class='id identifier rubyid_read_embl'>read_embl</span><span class='lparen'>(</span><span class='ivar'>@id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_next_entry'>next_entry</span> <span class='comment'># class BIO::EMBL
+</span>
+	<span class='comment'># Convert the BIO::EMBL object to Bio::Sequence to include annotations
+</span>	<span class='comment'># Create a sequence object to annotate it!
+</span>	<span class='ivar'>@sequence</span> <span class='op'>=</span> <span class='ivar'>@embl</span><span class='period'>.</span><span class='id identifier rubyid_to_biosequence'>to_biosequence</span> 
+
+	<span class='comment'># Hash that has for keys the feature type (in this case the only key is &quot;exon&quot;)
+</span>	<span class='comment'># The values are a hash of features.
+</span>	<span class='ivar'>@features</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+
+	<span class='comment'># Annotate exon features 
+</span>	<span class='comment'># get_exons_features is an auxiliary method to extract exon features (see method)
+</span>	<span class='ivar'>@features</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>exons</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_get_exons_features'>get_exons_features</span>
+
+	<span class='comment'># Search for CTTCTT repeats and annotate the sequence
+</span>	<span class='id identifier rubyid_search_annotate_sequence'>search_annotate_sequence</span>
+
+	<span class='comment'># Add the Gene created to the list of Genes
+</span>	<span class='cvar'>@@all_genes</span><span class='lbracket'>[</span><span class='ivar'>@id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+  <div id="instance_attr_details" class="attr_details">
+    <h2>Instance Attribute Details</h2>
+    
+      
+      <span id=""></span>
+      <div class="method_details first">
+  <h3 class="signature first" id="all_genes-instance_method">
+  
+    #<strong>all_genes</strong>  &#x21d2; <tt>Hash&lt;String, <span class='object_link'><a href="" title="Gene (class)">Gene</a></span>&gt;</tt>  <span class="extras">(readonly)</span>
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Hash that contains all the genes that are created (Class variable)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash&lt;String, <span class='object_link'><a href="" title="Gene (class)">Gene</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Hash of all the genes created. The key is the Gene ID (AGI Locus Codes) and the value is the Gene Object.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 38</span>
+
+<span class='cvar'>@@all_genes</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="embl=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="embl-instance_method">
+  
+    #<strong>embl</strong>  &#x21d2; <tt>Bio::EMBL</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get/Set the EMBL record of the Gene ID</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bio::EMBL</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the EMBL record of the Gene ID</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 23</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_embl'>embl</span>
+  <span class='ivar'>@embl</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="features=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="features-instance_method">
+  
+    #<strong>features</strong>  &#x21d2; <tt>Hash&lt;String, Hash&lt;String, Bio::Feature&gt;&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get/Set the Features of the Gene ID</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash&lt;String, Hash&lt;String, Bio::Feature&gt;&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the features of the Gene ID</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_features'>features</span>
+  <span class='ivar'>@features</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="id=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="id-instance_method">
+  
+    #<strong>id</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get/Set the Gene ID AGI Code</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The Gene ID AGI Locus Code</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+18
+19
+20</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 18</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_id'>id</span>
+  <span class='ivar'>@id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="sequence=-instance_method"></span>
+      <div class="method_details ">
+  <h3 class="signature " id="sequence-instance_method">
+  
+    #<strong>sequence</strong>  &#x21d2; <tt>Bio::Sequence</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Get/Set the Sequence of the Gene ID</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bio::Sequence</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the Sequence of the Gene ID</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+28
+29
+30</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 28</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_sequence'>sequence</span>
+  <span class='ivar'>@sequence</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="all_genes-class_method">
+  
+    .<strong>all_genes</strong>  &#x21d2; <tt>Hash&lt;String, <span class='object_link'><a href="" title="Gene (class)">Gene</a></span>&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Class Method to get all the created Gene objects.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash&lt;String, <span class='object_link'><a href="" title="Gene (class)">Gene</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the class variable all_genes.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+223
+224
+225</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 223</span>
+
+<span class='kw'>def</span> <span class='const'><span class='object_link'><a href="" title="Gene (class)">Gene</a></span></span><span class='period'>.</span><span class='id identifier rubyid_all_genes'>all_genes</span>
+	<span class='kw'>return</span> <span class='cvar'>@@all_genes</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="==-instance_method">
+  
+    #<strong>==</strong>(other)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Overwrite the == method to compare genes by AGI Locus Codes (ID)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>other</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Gene (class)">Gene</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A Gene object to compare.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>. True if Genes are the same, false if not.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+231
+232
+233</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 231</span>
+
+<span class='kw'>def</span> <span class='op'>==</span><span class='lparen'>(</span><span class='id identifier rubyid_other'>other</span><span class='rparen'>)</span>
+	<span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span> <span class='op'>==</span> <span class='id identifier rubyid_other'>other</span><span class='period'>.</span><span class='id identifier rubyid_id'>id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="fetch_embl-instance_method">
+  
+    #<strong>fetch_embl</strong>(id)  &#x21d2; <tt>Bio::FlatFile</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns flat embl record located in ./embl_records.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bio::FlatFile</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>flat embl record located in ./embl_records</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95
+96
+97
+98
+99
+100
+101</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_fetch_embl'>fetch_embl</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_address'>address</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>http://www.ebi.ac.uk/Tools/dbfetch/dbfetch?db=ensemblgenomesgene&amp;format=embl&amp;id=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+	<span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='id identifier rubyid_fetch'><span class='object_link'><a href="top-level-namespace.html#fetch-instance_method" title="#fetch (method)">fetch</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_address'>address</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_record'>record</span> <span class='op'>=</span> <span class='id identifier rubyid_response'>response</span><span class='period'>.</span><span class='id identifier rubyid_body'>body</span>
+	<span class='comment'># create a local file with this data
+</span>	<span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_open'>open</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./embl_records/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_content'>.embl</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>w</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_file'>file</span><span class='op'>|</span>  <span class='comment'># w makes it writable
+</span>		<span class='id identifier rubyid_file'>file</span><span class='period'>.</span><span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_record'>record</span>
+	<span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="get_exons_features-instance_method">
+  
+    #<strong>get_exons_features</strong>  &#x21d2; <tt>Hash&lt;String, Bio::Feature] a hash of exons as <span class='object_link'><a href="#features-instance_method" title="Gene#features (method)">features</a></span>.</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns Hash&lt;String, Bio::Feature] a hash of exons as features.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash&lt;String, Bio::Feature] a hash of exons as <span class='object_link'><a href="#features-instance_method" title="Gene#features (method)">features</a></span>.</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Hash&lt;String, Bio::Feature] a hash of exons as features.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 116</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_get_exons_features'>get_exons_features</span>
+
+	<span class='id identifier rubyid_exon_hash'>exon_hash</span> <span class='op'>=</span> <span class='const'>Hash</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+
+	<span class='comment'># iterates over each element in &#39;features&#39; # features method finds all features
+</span>	<span class='ivar'>@embl</span><span class='period'>.</span><span class='id identifier rubyid_features'>features</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_feature'>feature</span><span class='op'>|</span>
+		<span class='comment'># FILTER EXON FEATURES
+</span>		<span class='kw'>next</span> <span class='kw'>unless</span> <span class='id identifier rubyid_feature'>feature</span><span class='period'>.</span><span class='id identifier rubyid_feature'>feature</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>exon</span><span class='tstring_end'>&quot;</span></span>
+
+		<span class='id identifier rubyid_qual'>qual</span> <span class='op'>=</span> <span class='id identifier rubyid_feature'>feature</span><span class='period'>.</span><span class='id identifier rubyid_assoc'>assoc</span> <span class='comment'># Extract associated values of feature
+</span>
+		<span class='id identifier rubyid_exon_id_regex'>exon_id_regex</span> <span class='op'>=</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>exon_id=(</span><span class='embexpr_beg'>#{</span><span class='ivar'>@id</span><span class='embexpr_end'>}</span><span class='tstring_content'>.*)</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span> <span class='comment'># The regex to find the exon_id in notes
+</span>
+		<span class='comment'># Search for exon number and ID
+</span>		<span class='kw'>if</span> <span class='id identifier rubyid_exon_id_regex'>exon_id_regex</span><span class='period'>.</span><span class='id identifier rubyid_match'>match</span><span class='lparen'>(</span><span class='id identifier rubyid_qual'>qual</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>note</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+			<span class='id identifier rubyid_exon_hash'>exon_hash</span><span class='lbracket'>[</span><span class='backref'>$1</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_feature'>feature</span> <span class='comment'># Use the exon number as key and the exon feature as value
+</span>		<span class='kw'>end</span>
+	<span class='kw'>end</span>
+	<span class='kw'>return</span> <span class='id identifier rubyid_exon_hash'>exon_hash</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="read_embl-instance_method">
+  
+    #<strong>read_embl</strong>(id)  &#x21d2; <tt>Bio::FlatFile</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns EMBL record of ID.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Bio::FlatFile</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>EMBL record of ID</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+106
+107
+108
+109</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 106</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_read_embl'>read_embl</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+	<span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./embl_records/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_id'>id</span><span class='embexpr_end'>}</span><span class='tstring_content'>.embl</span><span class='tstring_end'>&quot;</span></span>
+	<span class='kw'>return</span> <span class='const'>Bio</span><span class='op'>::</span><span class='const'>FlatFile</span><span class='period'>.</span><span class='id identifier rubyid_auto'>auto</span><span class='lparen'>(</span><span class='id identifier rubyid_filename'>filename</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="search_annotate_sequence-instance_method">
+  
+    #<strong>search_annotate_sequence</strong>(feature_name = &#39;repeat&#39;, sequence = &#39;cttctt&#39;)  &#x21d2; <tt>Array&lt;Bio::Feature&gt;</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns append found features to the Bio::Sequence object of the Gene.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array&lt;Bio::Feature&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>append found features to the Bio::Sequence object of the Gene.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 147</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_search_annotate_sequence'>search_annotate_sequence</span><span class='lparen'>(</span><span class='id identifier rubyid_feature_name'>feature_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>repeat</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_sequence'>sequence</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>cttctt</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+	<span class='comment'># Convert the sequence query String to a Bio::Sequence::NA object
+</span>	<span class='id identifier rubyid_sequence'>sequence</span> <span class='op'>=</span> <span class='const'>Bio</span><span class='op'>::</span><span class='const'>Sequence</span><span class='op'>::</span><span class='const'>NA</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_sequence'>sequence</span><span class='rparen'>)</span>
+	<span class='comment'># Create a regex for the sequence.
+</span>	<span class='comment'># IMPORTANT: the term (?=) means positive lookahead. It searches for the sequence
+</span>	<span class='comment'># before it reaches the string. This way it is aware of overlapping sequences.
+</span>	<span class='comment'># eg. CTTCTTCTT In this case there are two instances of CTTCTT.
+</span>	<span class='id identifier rubyid_sequence_regex'>sequence_regex</span> <span class='op'>=</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_sequence'>sequence</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span>
+	<span class='comment'># Create the same regex for the reverse complement of the sequence
+</span>	<span class='comment'># This searches for the pattern in the reverse strand
+</span>	<span class='id identifier rubyid_reverse_sequence_regex'>reverse_sequence_regex</span> <span class='op'>=</span> <span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(?=</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_sequence'>sequence</span><span class='period'>.</span><span class='id identifier rubyid_complement'>complement</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/i</span></span><span class='rparen'>)</span>
+
+	<span class='comment'># Iterate over each exon of the Gene
+</span>	<span class='ivar'>@features</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>exons</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_exon_id'>exon_id</span><span class='comma'>,</span> <span class='id identifier rubyid_exon'>exon</span><span class='op'>|</span>
+		<span class='comment'># Retrieve the sequence of the exon
+</span>		<span class='id identifier rubyid_seq'>seq</span> <span class='op'>=</span> <span class='ivar'>@sequence</span><span class='period'>.</span><span class='id identifier rubyid_splicing'>splicing</span><span class='lparen'>(</span><span class='id identifier rubyid_exon'>exon</span><span class='period'>.</span><span class='id identifier rubyid_position'>position</span><span class='rparen'>)</span>
+		<span class='comment'># Get all matches of sequence in the string.
+</span>		<span class='comment'># This line of code was adapted from StackOverflow.
+</span>		<span class='id identifier rubyid_matches'>matches</span> <span class='op'>=</span> <span class='id identifier rubyid_seq'>seq</span><span class='period'>.</span><span class='id identifier rubyid_to_enum'>to_enum</span><span class='lparen'>(</span><span class='symbol'>:scan</span><span class='comma'>,</span> <span class='id identifier rubyid_sequence_regex'>sequence_regex</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='rbrace'>}</span>
+		<span class='comment'># TO adjust positions relative to sequence!!
+</span>		<span class='comment'># Get starting and ending positions of the exon.
+</span>		<span class='comment'># Put coordinates relative to the Gene sequence, not the exon.	
+</span>		<span class='id identifier rubyid_from'>from</span><span class='comma'>,</span> <span class='id identifier rubyid_to'>to</span> <span class='op'>=</span> <span class='id identifier rubyid_exon'>exon</span><span class='period'>.</span><span class='id identifier rubyid_locations'>locations</span><span class='period'>.</span><span class='id identifier rubyid_span'>span</span>
+		<span class='kw'>if</span> <span class='id identifier rubyid_matches'>matches</span> <span class='comment'># If there is a match
+</span>			<span class='id identifier rubyid_matches'>matches</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_match'>match</span><span class='op'>|</span> <span class='comment'># Go trough each match
+</span>				<span class='comment'># Set the forward position relative to the gene
+</span>				<span class='id identifier rubyid_position'>position</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_match'>match</span><span class='period'>.</span><span class='id identifier rubyid_offset'>offset</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='int'>1</span> <span class='op'>+</span> <span class='id identifier rubyid_from'>from</span> <span class='op'>-</span> <span class='int'>1</span><span class='embexpr_end'>}</span><span class='tstring_content'>..</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_match'>match</span><span class='period'>.</span><span class='id identifier rubyid_offset'>offset</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_from'>from</span> <span class='op'>-</span> <span class='int'>1</span> <span class='op'>+</span> <span class='int'>6</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span>
+				<span class='id identifier rubyid_repeat_ft'>repeat_ft</span> <span class='op'>=</span> <span class='const'>Bio</span><span class='op'>::</span><span class='const'>Feature</span><span class='op'>::</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_feature_name'>feature_name</span><span class='comma'>,</span> <span class='id identifier rubyid_position'>position</span><span class='rparen'>)</span> <span class='comment'># Create new feature object
+</span>           		<span class='id identifier rubyid_repeat_ft'>repeat_ft</span><span class='period'>.</span><span class='id identifier rubyid_append'>append</span><span class='lparen'>(</span><span class='const'>Bio</span><span class='op'>::</span><span class='const'>Feature</span><span class='op'>::</span><span class='const'>Qualifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>note</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_exon_id'>exon_id</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='comment'>#Append the exon id as a Qualifier of the feature
+</span>				<span class='ivar'>@sequence</span><span class='period'>.</span><span class='id identifier rubyid_features'>features</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_repeat_ft'>repeat_ft</span> <span class='comment'># Append the new feature to the features of the sequence of the Gene.
+</span>			<span class='kw'>end</span>
+		<span class='kw'>end</span>
+		<span class='comment'># Same procedure as before but with the reverse complement as regex.
+</span>		<span class='id identifier rubyid_rev_matches'>rev_matches</span> <span class='op'>=</span> <span class='id identifier rubyid_seq'>seq</span><span class='period'>.</span><span class='id identifier rubyid_to_enum'>to_enum</span><span class='lparen'>(</span><span class='symbol'>:scan</span><span class='comma'>,</span> <span class='id identifier rubyid_reverse_sequence_regex'>reverse_sequence_regex</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span> <span class='lbrace'>{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id identifier rubyid_last_match'>last_match</span><span class='rbrace'>}</span>
+		<span class='kw'>if</span> <span class='id identifier rubyid_rev_matches'>rev_matches</span>
+			<span class='id identifier rubyid_rev_matches'>rev_matches</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_match'>match</span><span class='op'>|</span>
+				<span class='comment'># Note that the position is specified that it is on the reverse strand.
+</span>				<span class='id identifier rubyid_position'>position</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>complement(</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_match'>match</span><span class='period'>.</span><span class='id identifier rubyid_offset'>offset</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='int'>1</span> <span class='op'>+</span> <span class='id identifier rubyid_from'>from</span> <span class='op'>-</span> <span class='int'>1</span><span class='embexpr_end'>}</span><span class='tstring_content'>..</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_match'>match</span><span class='period'>.</span><span class='id identifier rubyid_offset'>offset</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_from'>from</span> <span class='op'>-</span> <span class='int'>1</span> <span class='op'>+</span> <span class='int'>6</span><span class='embexpr_end'>}</span><span class='tstring_content'>)</span><span class='tstring_end'>&quot;</span></span>
+				<span class='id identifier rubyid_rev_repeat_ft'>rev_repeat_ft</span> <span class='op'>=</span> <span class='const'>Bio</span><span class='op'>::</span><span class='const'>Feature</span><span class='op'>::</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_feature_name'>feature_name</span> <span class='comma'>,</span> <span class='id identifier rubyid_position'>position</span><span class='rparen'>)</span>
+				<span class='id identifier rubyid_rev_repeat_ft'>rev_repeat_ft</span><span class='period'>.</span><span class='id identifier rubyid_append'>append</span><span class='lparen'>(</span><span class='const'>Bio</span><span class='op'>::</span><span class='const'>Feature</span><span class='op'>::</span><span class='const'>Qualifier</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>note</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_exon_id'>exon_id</span><span class='rparen'>)</span><span class='rparen'>)</span>
+				<span class='ivar'>@sequence</span><span class='period'>.</span><span class='id identifier rubyid_features'>features</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_rev_repeat_ft'>rev_repeat_ft</span>
+		   <span class='kw'>end</span>
+		<span class='kw'>end</span>
+	<span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="to_s-instance_method">
+  
+    #<strong>to_s</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Overwrite the to_s method to print genes by AGI Locus Codes (ID)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>. The Gene ID.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+238
+239
+240</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 238</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_to_s'>to_s</span>
+	<span class='kw'>return</span> <span class='ivar'>@id</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="write_report-instance_method">
+  
+    #<strong>write_report</strong>  &#x21d2; <tt>String</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns a report of the exons without the CTTCTT repeat.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>a report of the exons without the CTTCTT repeat.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'Gene.rb', line 196</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_write_report'>write_report</span>
+	<span class='id identifier rubyid_repeats_array'>repeats_array</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='comment'># Create an array of repeat features
+</span>	<span class='comment'># Go through all the features of the sequence gene
+</span>	<span class='ivar'>@sequence</span><span class='period'>.</span><span class='id identifier rubyid_features'>features</span><span class='period'>.</span><span class='id identifier rubyid_each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid_feature'>feature</span><span class='op'>|</span>
+		<span class='comment'># Only use repeat features
+</span>		<span class='kw'>next</span> <span class='kw'>unless</span> <span class='id identifier rubyid_feature'>feature</span><span class='period'>.</span><span class='id identifier rubyid_feature'>feature</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>repeat</span><span class='tstring_end'>&#39;</span></span>
+		<span class='id identifier rubyid_repeats_array'>repeats_array</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_feature'>feature</span><span class='period'>.</span><span class='id identifier rubyid_assoc'>assoc</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>note</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span> <span class='comment'># Append that repeat to the array
+</span>	<span class='kw'>end</span>
+	<span class='comment'># Remove duplicates (an exon can have many repeats)	
+</span>	<span class='id identifier rubyid_repeats_array'>repeats_array</span> <span class='op'>=</span> <span class='id identifier rubyid_repeats_array'>repeats_array</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span>
+	
+	<span class='id identifier rubyid_report_string'>report_string</span> <span class='op'>=</span> <span class='const'>String</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span> <span class='comment'># This will be the return value
+</span>	<span class='comment'># Find those exons that do not have repeats  
+</span>	<span class='id identifier rubyid_exons_not_repeat'>exons_not_repeat</span> <span class='op'>=</span> <span class='ivar'>@features</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>exons</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span> <span class='op'>-</span> <span class='id identifier rubyid_repeats_array'>repeats_array</span><span class='period'>.</span><span class='id identifier rubyid_uniq'>uniq</span>
+	<span class='comment'># If exons_not_repeat empty, all exons have repeat
+</span>	<span class='kw'>unless</span> <span class='id identifier rubyid_exons_not_repeat'>exons_not_repeat</span><span class='period'>.</span><span class='id identifier rubyid_empty?'>empty?</span>
+		<span class='comment'># Gene ID as header	
+</span>		<span class='id identifier rubyid_report_string'>report_string</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Gene ID: </span><span class='embexpr_beg'>#{</span><span class='ivar'>@id</span><span class='embexpr_end'>}</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span>
+		<span class='id identifier rubyid_report_string'>report_string</span> <span class='op'>+=</span> <span class='id identifier rubyid_exons_not_repeat'>exons_not_repeat</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+		<span class='id identifier rubyid_report_string'>report_string</span> <span class='op'>+=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n\n</span><span class='tstring_end'>&quot;</span></span>
+	<span class='kw'>end</span>
+	<span class='kw'>return</span> <span class='id identifier rubyid_report_string'>report_string</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Sat Nov 13 23:48:33 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-3.0.2).
+</div>
+
+    </div>
+  </body>
+</html>
