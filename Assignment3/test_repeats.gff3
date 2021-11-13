@@ -1,0 +1,17 @@
+##gff-version 3
+AT2G46340	Gene.rb	repeat_unit	4920	4925	.	-	.	exon_id=AT2G46340.2.exon1
+AT2G46340	Gene.rb	repeat_unit	5109	5114	.	-	.	exon_id=AT2G46340.2.exon1
+AT2G46340	Gene.rb	repeat_unit	5115	5120	.	-	.	exon_id=AT2G46340.2.exon1
+AT2G46340	Gene.rb	repeat_unit	5121	5126	.	-	.	exon_id=AT2G46340.2.exon1
+AT2G46340	Gene.rb	repeat_unit	1175	1180	.	-	.	exon_id=AT2G46340.2.exon6
+AT2G46340	Gene.rb	repeat_unit	1899	1904	.	+	.	exon_id=AT2G46340.2.exon4
+AT2G46340	Gene.rb	repeat_unit	1990	1995	.	+	.	exon_id=AT2G46340.2.exon4
+AT2G46340	Gene.rb	repeat_unit	2436	2441	.	+	.	exon_id=AT2G46340.2.exon4
+AT2G46340	Gene.rb	repeat_unit	5109	5114	.	-	.	exon_id=AT2G46340.1.exon1
+AT2G46340	Gene.rb	repeat_unit	5115	5120	.	-	.	exon_id=AT2G46340.1.exon1
+AT2G46340	Gene.rb	repeat_unit	5121	5126	.	-	.	exon_id=AT2G46340.1.exon1
+AT2G46340	Gene.rb	repeat_unit	258	263	.	+	.	exon_id=AT2G46340.1.exon8
+AT2G46340	Gene.rb	repeat_unit	220	225	.	-	.	exon_id=AT2G46340.1.exon8
+AT2G46340	Gene.rb	repeat_unit	258	263	.	+	.	exon_id=AT2G46340.2.exon8
+AT2G46340	Gene.rb	repeat_unit	220	225	.	-	.	exon_id=AT2G46340.2.exon8
+##FASTA
