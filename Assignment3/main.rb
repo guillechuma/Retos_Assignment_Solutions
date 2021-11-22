@@ -45,7 +45,7 @@ File.open($REPORT_FILE,'w') do |file|
     Gene.all_genes.each_value do |gene|
         file.write(gene.write_report)
     end
-    file.write('End of Report')
+    file.write("\nEnd of Report")
 end
 
 # Write a GFF3 file with the CTTCTT repeats in the exons of all the genes in the list.

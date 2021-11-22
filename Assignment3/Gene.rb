@@ -156,6 +156,8 @@ class Gene
 		# This searches for the pattern in the reverse strand
 		reverse_sequence_regex = Regexp.new(/(?=#{sequence.complement})/i)
 
+		# Position array to avoid repetition of transcripts
+		position_array = Array.new
 		# Iterate over each exon of the Gene
 		@features['exons'].each do |exon_id, exon|
 			# Retrieve the sequence of the exon
@@ -171,6 +173,8 @@ class Gene
 				matches.each do |match| # Go trough each match
 					# Set the forward position relative to the gene
 					position = "#{match.offset(0)[0] + 1 + from - 1}..#{match.offset(0)[0] + from - 1 + 6}"
+					next if position_array.include? position # Next if the position has been found by another transcript
+					position_array << position # Append from position to array
 					repeat_ft = Bio::Feature::new(feature_name, position) # Create new feature object
             		repeat_ft.append(Bio::Feature::Qualifier.new('note', exon_id)) #Append the exon id as a Qualifier of the feature
 					@sequence.features << repeat_ft # Append the new feature to the features of the sequence of the Gene.
@@ -182,6 +186,8 @@ class Gene
 				rev_matches.each do |match|
 					# Note that the position is specified that it is on the reverse strand.
 					position = "complement(#{match.offset(0)[0] + 1 + from - 1}..#{match.offset(0)[0] + from - 1 + 6})"
+					next if position_array.include? position # Next if the position has been found by another transcript
+					position_array << position # Append from position to array
 					rev_repeat_ft = Bio::Feature::new(feature_name , position)
 					rev_repeat_ft.append(Bio::Feature::Qualifier.new('note', exon_id))
 					@sequence.features << rev_repeat_ft
@@ -190,31 +196,32 @@ class Gene
 		end
 	end
 
-	# Report showing which exons do not have the CTTCTT repeat.
+	# Report showing which Genes do not have the CTTCTT repeat.
 	#
 	# @return [String] a report of the exons without the CTTCTT repeat.
 	def write_report
-		repeats_array = Array.new # Create an array of repeat features
+		# repeats_array = Array.new # Create an array of repeat features
 		# Go through all the features of the sequence gene
 		@sequence.features.each do |feature|
 			# Only use repeat features
 			next unless feature.feature == 'repeat'
-			repeats_array << feature.assoc['note'] # Append that repeat to the array
+			# repeats_array << feature.assoc['note'] # Append that repeat to the array
+			return '' # case if there is a repeat
 		end
 		# Remove duplicates (an exon can have many repeats)	
-		repeats_array = repeats_array.uniq
+		# repeats_array = repeats_array.uniq
 
-		report_string = String.new # This will be the return value
-		# Find those exons that do not have repeats  
-		exons_not_repeat = @features["exons"].keys - repeats_array.uniq
-		# If exons_not_repeat empty, all exons have repeat
-		unless exons_not_repeat.empty?
-			# Gene ID as header	
-			report_string += "Gene ID: #{@id}\n"
-			report_string += exons_not_repeat.join("\n")
-			report_string += "\n\n"
-		end
-		return report_string
+		# report_string = String.new # This will be the return value
+		# # Find those exons that do not have repeats  
+		# exons_not_repeat = @features["exons"].keys - repeats_array.uniq
+		# # If exons_not_repeat empty, all exons have repeat
+		# unless exons_not_repeat.empty?
+		# 	# Gene ID as header	
+		# 	report_string += "Gene ID: #{@id}\n"
+		# 	report_string += exons_not_repeat.join("\n")
+		# 	report_string += "\n\n"
+		# end
+		return "#{@id}\n"
 	end
 
 	# Class Method to get all the created Gene objects.
