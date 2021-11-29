@@ -19,6 +19,5 @@ To run the program you need to clone this repository and use the command line. T
 ruby main.rb ArabidopsisSubNetwork_GeneList.txt genes_not_repeats.txt repeats.gff3 chr_repeats.gff3
 ```
 
-This image [Arabidopsis_thaliana_219022092_19027593.png](./
-Arabidopsis_thaliana_219022092_19027593.png) is the ENSEMBL region of gene AT2G46340.
+This image [Arabidopsis_thaliana_219022092_19027593.png](./Arabidopsis_thaliana_219022092_19027593.png) is the ENSEMBL region of gene AT2G46340.
 It shows the gene track and also the CTTCTT repeat track in brown. The upper part is the forward stand and the lower part is the reverse strand.
