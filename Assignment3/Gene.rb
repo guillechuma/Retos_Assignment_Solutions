@@ -211,19 +211,8 @@ class Gene
 			# repeats_array << feature.assoc['note'] # Append that repeat to the array
 			return '' # case if there is a repeat
 		end
-		# Remove duplicates (an exon can have many repeats)	
-		# repeats_array = repeats_array.uniq
-
-		# report_string = String.new # This will be the return value
-		# # Find those exons that do not have repeats  
-		# exons_not_repeat = @features["exons"].keys - repeats_array.uniq
-		# # If exons_not_repeat empty, all exons have repeat
-		# unless exons_not_repeat.empty?
-		# 	# Gene ID as header	
-		# 	report_string += "Gene ID: #{@id}\n"
-		# 	report_string += exons_not_repeat.join("\n")
-		# 	report_string += "\n\n"
-		# end
+		
+		# If there is no repeat, return Gene to report!
 		return "#{@id}\n"
 	end
 
