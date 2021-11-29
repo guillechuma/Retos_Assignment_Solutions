@@ -164,6 +164,7 @@ class Gene
 			seq = @sequence.splicing(exon.position)
 			# Get all matches of sequence in the string.
 			# This line of code was adapted from StackOverflow.
+			# URL: https://stackoverflow.com/questions/80357/how-to-match-all-occurrences-of-a-regex
 			matches = seq.to_enum(:scan, sequence_regex).map {Regexp.last_match}
 			# TO adjust positions relative to sequence!!
 			# Get starting and ending positions of the exon.
@@ -181,6 +182,8 @@ class Gene
 				end
 			end
 			# Same procedure as before but with the reverse complement as regex.
+			# This line of code was adapted from StackOverflow.
+			# URL: https://stackoverflow.com/questions/80357/how-to-match-all-occurrences-of-a-regex
 			rev_matches = seq.to_enum(:scan, reverse_sequence_regex).map {Regexp.last_match}
 			if rev_matches
 				rev_matches.each do |match|
