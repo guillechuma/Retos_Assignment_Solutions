@@ -158,10 +158,11 @@ def RBH(proteome_1, proteome_2, database_1, database_2, report_name)
         end
       end
     end
+    # End of report
+    file.write("\n")
+    file.write("Found #{ort_count} orthologues between S. pombe and A. thaliana")
+    puts "Found #{ort_count} orthologues between S. pombe and A. thaliana"
   end
-  file.write("\n")
-  file.write("Found #{ort_count} orthologues between S. pombe and A. thaliana")
-  puts "Found #{ort_count} orthologues between S. pombe and A. thaliana"
 end
 
 # Run Reciprocal Best Hit program with both proteomes
