@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.27
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="file_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'>
+<h2 id="label-Solution+to+the+Assignment+4+of+the+UPM-27s+Master+course+in+Computational+Biology">Solution to the Assignment 4 of the UPM&#39;s Master course in Computational Biology</h2>
+
+<p>All the code was written by me (Guillermo Chumaceiro).</p>
+
+<p>This program does a reciprocal best blast hits (RBH) between all proteins
+of Arabidopsis thaliana and Schizosaccharomyces pombe to find putative
+orthologues between the two species.</p>
+
+<p>An important remark in finding orthologues through reciprocal best hits is
+that comparing protein sequences give more accurate results, since they are
+less redundant than nucleic acids. That is the reason why I chose to
+convert all the sequences to protein and create a protein database to find
+the orthologues. Also, performing blastp is more efficient than tblastx.</p>
+
+<p>I adjusted two parameters of the BLASTp program to find orthologues [1]:</p>
+<ol><li>
+<p>E-Value of 1*10-6.</p>
+</li><li>
+<p>A query coverage of greater or equal to 50% (defined as alignment
+length/query length).</p>
+</li></ol>
+
+<p>To run the program you need to clone this repository and use the command
+line. You need to have blast and blast-legacy installed in you local
+computer. The main file is named <a href="./main.rb">main.rb</a>. The
+command to run the program is: <code> ruby main.rb ./data/athaliana.fa
+./data/spombe.fa RBH_arabidopsis_spombe.txt </code></p>
+
+<p>The result of the program is a report that can be found here: <a
+href="./RBH_ara_spombe.txt">RBH_ara_spombe.txt</a></p>
+
+<h3 id="label-Next+steps+to+confirm+orthology">Next steps to confirm orthology</h3>
+<ol><li>
+<p>The ideal step to determine the orthologue proteins between these two
+species would be to make a phylogenetic analysis on the putative
+orthologues obtained in the Reciprocal Best Hit. A phylogenetic tree gives
+a more accurate representation of the evolutionary history between the two
+species, thus allowing to differentiate paralogues from orthologues.
+Another thing that phylogenetic trees captures are co-orthologs. The idea
+behind this method, although it is computationally more expensive, would be
+to include a third species (the more the better) and find putative
+orthologues and construct a gene tree with the ortologue genes. then we
+find the species tree between and reconcile both trees to find the
+duplication and speciation events, thus separating orthologues from
+paralogues. This step is hard and computationally expensive [2].</p>
+</li><li>
+<p>Another way we can include a third species to the analysis of orthology is
+to do RBH of the third species with the initial two and form what are
+called Clusters of Orthologous Groups (COG). If two genes are the RBH, then
+if we compare them both to a third gene and are at the same time RBH of
+that third gene, chances are high that these genes are indeed orthologues.
+To form a COG we need that the RBH of the three species form a triangle
+relationship [3].</p>
+</li><li>
+<p>Another easier and valid approach that we can do to confirm that two RBH
+are orthologues is to make a functional analysis of the pair of genes. In
+theory, orhologues are more likely to have the same function. So a simple
+way to eliminate false positives is to find the GO terms of each pair and
+see if they are the same, specially the molecular function and the
+biological process. We can determine a threshold to consider two genes
+homologues. For example, if they same more than 80% of their GO terms they
+are orthologues [2].</p>
+</li></ol>
+
+<h3 id="label-Bibliography">Bibliography</h3>
+
+<p>[1] Ward, N., &amp; Moreno-Hagelsieb, G. (2014). Quickly finding orthologs
+as reciprocal best hits with BLAT, LAST, and UBLAST: how much do we miss?.
+PloS one, 9(7), e101850. <a
+href="https://doi.org/10.1371/journal.pone.0101850">doi.org/10.1371/journal.pone.0101850</a></p>
+
+<p>[2] Fang, G., Bhardwaj, N., Robilotto, R., &amp; Gerstein, M. B. (2010).
+Getting started in gene orthology and functional analysis. PLoS
+computational biology, 6(3), e1000703. <a
+href="https://doi.org/10.1371/journal.pcbi.1000703">doi.org/10.1371/journal.pcbi.1000703</a></p>
+
+<p>[3] Li, L., Stoeckert, C. J., Jr, &amp; Roos, D. S. (2003). OrthoMCL:
+identification of ortholog groups for eukaryotic genomes. Genome research,
+13(9), 2178–2189. <a
+href="https://doi.org/10.1101/gr.1224503">doi.org/10.1101/gr.1224503</a></p>
+</div></div>
+
+      <div id="footer">
+  Generated on Tue Dec 21 03:32:35 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.27 (ruby-2.5.9).
+</div>
+
+    </div>
+  </body>
+</html>
