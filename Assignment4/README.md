@@ -13,7 +13,7 @@ I adjusted two parameters of the BLASTp program to find orthologues [1]:
 
 To run the program you need to clone this repository and use the command line. You need to have blast and blast-legacy installed in you local computer. The main file is named [main.rb](./main.rb). The command to run the program is: 
 ```
-ruby main.rb ./data/athaliana.fa ./data/spombe.fa RBH_arabidopsis_spombe.txt
+ruby main.rb ./data/athaliana.fa ./data/spombe.fa RBH_ara_spombe.txt
 ```
 
 The result of the program is a report that can be found here: [RBH_ara_spombe.txt](./RBH_ara_spombe.txt)

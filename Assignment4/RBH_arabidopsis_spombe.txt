@@ -1,2 +1,0 @@
-Orthologues between A.thaniana and S.pombe
-S.pombe gene	A.thaniana gene

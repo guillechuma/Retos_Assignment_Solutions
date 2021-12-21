@@ -7,7 +7,7 @@ input_array = ARGV
 if input_array.empty? or (input_array.length != 3) then 
 	$ARA_FILE = "./data/athaliana.fa"
   $SPOMBE_FILE = "./data/spombe.fa"
-  $REPORT_FILE = "RBH_arabidopsis_spombe.txt"
+  $REPORT_FILE = "RBH_ara_spombe.txt"
 else
 	# Case where there are command line arguments
 	$ARA_FILE = input_array[0]
