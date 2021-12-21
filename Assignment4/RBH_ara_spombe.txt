@@ -1,5 +1,5 @@
-Orthologues between A.thaniana and S.pombe
-S.pombe gene	A.thaniana gene
+Orthologues between A.thaliana and S.pombe
+S.pombe gene	A.thaliana gene
 SPAC977.16c	AT1G48430.1
 SPAC11D3.15	AT5G37830.1
 SPAC5H10.03	AT1G58280.3
@@ -1755,3 +1755,5 @@ SPMIT.05	ATMG00220.1
 SPMIT.07	ATMG01170.1
 SPMIT.10	AT2G07671.1
 SPMIT.11	ATMG00160.1
+
+Found 1755 orthologues between S. pombe and A. thaliana

@@ -36,7 +36,7 @@ fasta_file.each_entry do |x| # Go though each fasta record
 end
 
 # Create a blast database for both A.thaliana and S.pombe
-puts "Database for A.Thaliana created" if system("makeblastdb -in ./data/athaliana.faa -dbtype 'prot' -out ./databases/athaliana_prot")
+puts "Database for A.thaliana created" if system("makeblastdb -in ./data/athaliana.faa -dbtype 'prot' -out ./databases/athaliana_prot")
 puts "Database for S.pombe created" if system("makeblastdb -in ./data/spombe.fa -dbtype 'prot' -out ./databases/spombe")
 
 
@@ -97,8 +97,8 @@ def RBH(proteome_1, proteome_2, database_1, database_2, report_name)
   File.open(report_name,'w') do |file|
 
     # Header of the report
-    file.write("Orthologues between A.thaniana and S.pombe\n")
-    file.write("S.pombe gene\tA.thaniana gene\n")
+    file.write("Orthologues between A.thaliana and S.pombe\n")
+    file.write("S.pombe gene\tA.thaliana gene\n")
 
     # Iterate though all the query fasta files
     query_data.each_entry do |query_fasta|
@@ -159,7 +159,8 @@ def RBH(proteome_1, proteome_2, database_1, database_2, report_name)
       end
     end
   end
-
+  file.write("\n")
+  file.write("Found #{ort_count} orthologues between S. pombe and A. thaliana")
   puts "Found #{ort_count} orthologues between S. pombe and A. thaliana"
 end
 
